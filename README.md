@@ -1,5 +1,9 @@
 # ViewWorld AngularJS与SSH框架下媒体分享系统
 
+![image](https://raw.githubusercontent.com/DesBisous/ViewWorld/master/image/%E5%9B%BE%E7%89%87%202.png)
+
+![image](https://raw.githubusercontent.com/DesBisous/ViewWorld/master/image/%E5%9B%BE%E7%89%87%204.png)
+
 ## 系统功能主要分为以下几个主要部分：
 
 1. 媒体的分享功能：对已存储在系统中的媒体数据将以在网页中显示的形式进行分享，主要是通过图片的查阅、展示和视频的播放。
@@ -25,3 +29,5 @@
 4. 对于AJAX就是将POST和GET请求通过AJAX发送给后端。
 5. 对于Booostrap将重点使用它的样式组件和响应式机制来构件网页。
 6. 对于AngularJS主要用于前端的MVC布局设计，使用双向数据绑定、模块化等技术令前端开发变得更加便捷。
+
+![image](https://raw.githubusercontent.com/DesBisous/ViewWorld/master/image/%E5%9B%BE%E7%89%87%201.png)
