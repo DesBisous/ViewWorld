@@ -1,7 +1,6 @@
 # ViewWorld AngularJS与SSH框架下媒体分享系统
 
 ![image](https://raw.githubusercontent.com/DesBisous/ViewWorld/master/image/%E5%9B%BE%E7%89%87%202.png)
-
 ![image](https://raw.githubusercontent.com/DesBisous/ViewWorld/master/image/%E5%9B%BE%E7%89%87%204.png)
 
 ## 系统功能主要分为以下几个主要部分：
