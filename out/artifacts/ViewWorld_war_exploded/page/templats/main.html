@@ -1,0 +1,188 @@
+    <!--nav-->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="../style/image/icon_1.png">
+                </a>
+                <form class="navbar-form navbar-left visible-xs" role="search">
+                    <a href="#" class="search-a">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <div>图片</div> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu select-button" role="menu">
+                            <li ng-click="setQueryType('picture')"><a>图片</a></li>
+                            <li ng-click="setQueryType('video')"><a>视频</a></li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchText" placeholder="Search">
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right visible-xs">
+                    <li class="navbar-user">
+                        <a class="img-circle" ng-click="goToLogin()">
+                            <img ng-src="{{user.headImageSrc}}" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav state-change">
+                    <li><a ui-sref="main.home">首页</a></li>
+                    <li><a ui-sref="main.gallery.Type">画廊</a></li>
+                    <li><a ui-sref="main.movies.moviesHome">影视</a></li>
+                    <li><a ng-click="goToPersonal()">个人中心</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">客服 <span class="caret"></span></a>
+                        <ul class="dropdown-menu animated bounceIn" role="menu">
+                            <li><a ui-sref="main.aboutWeb">关于网站</a></li>
+                            <li class="divider"></li>
+                            <li><a ng-click="goToSuggestionBox()">意见箱</a></li>
+                            <li><a ng-click="goToMyService()">我的服务</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown hidden-sm">
+                        <a class="dropdown-toggle" data-toggle="dropdown">音乐 <span class="caret"></span></a>
+                        <ul class="dropdown-menu animated flipInX music-ul" role="menu">
+                            <li class="music-dropdown">
+                                <div class="music-parent">
+                                    <div class="music-player">
+                                            <div class="info">
+                                                <div class="center">
+                                                    <div class="jp-playlist">
+                                                        <ul>
+                                                            <li></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="progress jp-seek-bar">
+                                                    <span class="jp-play-bar" style="width: 0%"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="controls">
+                                                <div class="current jp-current-time">00:00</div>
+                                                <div class="play-controls">
+                                                    <a href="javascript:;" class="icon-previous jp-previous"
+                                                       title="previous"></a>
+                                                    <a href="javascript:;" class="icon-play jp-play" title="play"></a>
+                                                    <a href="javascript:;" class="icon-pause jp-pause"
+                                                       title="pause"></a>
+                                                    <a href="javascript:;" class="icon-next jp-next" title="next"></a>
+                                                </div>
+                                                <div class="volume-level jp-volume-bar">
+                                                    <span class="jp-volume-bar-value" style="width: 0%"></span>
+                                                    <a href="javascript:;" class="icon-volume-up jp-volume-max"
+                                                       title="max volume"></a>
+                                                    <a href="javascript:;" class="icon-volume-down jp-mute"
+                                                       title="mute"></a>
+                                                </div>
+                                            </div>
+                                            <div id="jquery_jplayer" class="jp-jplayer"></div>
+                                        </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left hidden-xs" role="search">
+                    <a class="search-a" ng-click="goToSearch()">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <div>图片</div> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu select-button" role="menu">
+                            <li ng-click="setQueryType('picture')"><a>图片</a></li>
+                            <li ng-click="setQueryType('video')"><a>视频</a></li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" ng-model="searchText" ng-keyup="myKeyup($event)">
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right hidden-xs">
+                    <li class="navbar-user">
+                        <a class="img-circle" ng-click="goToLogin()" ng-mouseenter="hoverEventEnter()" ng-mouseleave="hoverEventLeave()">
+                            <img ng-src="{{user.headImageSrc}}" alt="">
+                        </a>
+                        <div class="toolTipSelf animated fadeIn" ng-if="status.loginOutShow">
+                            <span>登出</span>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div ui-view="content"></div>
+    <!--footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 clearfix">
+                    <div class="pull-right">
+                        <p>Contact Us</p>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
+                            </li>
+                            <li>
+                                <a href="http://weixin.qq.com/" target="_blank" title="微信"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.qq.com/" target="_blank" title="作者QQ"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.zhihu.com/" target="_blank" title="知乎"></a>
+                            </li>
+                            <li>
+                                <a href="http://weibo.com/" target="_blank" title="微博"></a>
+                            </li>
+                            <li>
+                                <a href="https://mail.qq.com" target="_blank" title="邮箱"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pull-left">
+                        <div class="footer-left-header">
+                            <span class="left-header-logo"></span>
+                            <div class="dropdown">
+                                <span class="link">
+                                    <a href="http://www.taptap.com/developer">开发者中心</a>
+                                </span>
+                                <span class="link">
+                                    <a href="http://www.taptap.com/about-us">关于我们</a>
+                                </span>
+                            </div>
+                        </div>
+                        <p>Discover superb games.</p>
+                        <span>
+                            <span>Copyright © 2016 <a href="http://www.taptap.com">TapTap</a>. All rights Reserved.</span>
+                            <br>
+                            <span>适龄提示：本公司产品适合10周岁以上玩家使用</span>
+                            <span>&nbsp;&nbsp;<a href="http://www.taptap.com/taptapjh" target="_blank">未成年人家长监护</a>&nbsp;&nbsp;<a href="http://www.taptap.com/privacy-policy">隐私权和条款</a></span>
+                            <br>
+                            <span>作者：邝晓滨 | Benson</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="toTop" href="#/main/home" style="display: block;">
+            <span id="toTopHover" style="opacity: 1;"> </span>
+        </a>
+    </footer>

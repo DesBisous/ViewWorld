@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row gallery-head">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            <div class="head-text">影视</div>
+            <span class="head-time" ng-bind="fixedTime"></span>
+            <div class="head-line"></div>
+        </div>
+    </div>
+    <div class="row gallery-tab">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <ul class="nav nav-tabs movies-state" role="tablist">
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="goMovies('home')">
+                        <i class="gallery-tip1"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="goMovies('tvPlay')">
+                        <i class="gallery-tip1"></i>
+                        <span>电视剧</span>
+                    </a>
+                </li>
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="goMovies('film')">
+                        <i class="gallery-tip1"></i>
+                        <span>电影</span>
+                    </a>
+                </li>
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="goMovies('variety')">
+                        <i class="gallery-tip1"></i>
+                        <span>综艺</span>
+                    </a>
+                </li>
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="goMovies('Animation')">
+                        <i class="gallery-tip1"></i>
+                        <span>动漫</span>
+                    </a>
+                </li>
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="goMovies('Music')">
+                        <i class="gallery-tip1"></i>
+                        <span>音乐</span>
+                    </a>
+                </li>
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="goMovies('Dance')">
+                        <i class="gallery-tip1"></i>
+                        <span>舞蹈</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row movies-body">
+        <div ui-view="moviescontent"></div>
+    </div>
+</div>

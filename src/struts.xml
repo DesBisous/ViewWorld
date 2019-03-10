@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- 当struts的配置文件修改后,系统是否自动重新加载该文件,默认值为false(生产环境下使用),开发阶段最好打开 -->
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    <!--Struts2上传文件的最大Size的设置 1GB=1024MB=1073741824字节-->
+    <constant name="struts.multipart.maxSize" value="1073741824"/>
+    <package name="ViewWorld" extends="json-default" namespace="/">
+        <action name="user_*_*" class="{1}" method="{2}">
+            <result name="userActionResult" type="json"><!--将action的bean属性以json字符串返回浏览器-->
+                <!-- 此处将reslut的值返回给客户端，root的值对应要返回的值的属性result,注意：root为固定写法，否则不会把result的值返回给客户端 -->
+                <!--如果没有这个，将会返回action所有属性的json，这个是定制输出action的那些属性的，这里的话是定制输出action中的result属性的json化后的值-->
+                <param name="root">result</param>
+            </result>
+            <interceptor-ref name="json"></interceptor-ref><!--处理以JSON文本提交的请求-->
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <action name="upload_*_*" class="{1}" method="{2}">
+            <result name="upload" type="json">
+                <param name="root">result</param>
+            </result>
+            <interceptor-ref name="json"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <action name="websiteSug_*_*" class="{1}" method="{2}">
+            <result name="WebsiteSug" type="json">
+                <param name="root">result</param>
+            </result>
+            <interceptor-ref name="json"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <action name="suggestionBox_*_*" class="{1}" method="{2}">
+            <result name="suggestionBox" type="json">
+                <param name="root">result</param>
+            </result>
+            <interceptor-ref name="json"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <action name="userConcern_*_*" class="{1}" method="{2}">
+            <result name="userConcern" type="json">
+                <param name="root">result</param>
+            </result>
+            <interceptor-ref name="json"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <action name="album_*_*" class="{1}" method="{2}">
+            <result name="Album" type="json">
+                <param name="root">result</param>
+            </result>
+            <interceptor-ref name="json"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <action name="video_*_*" class="{1}" method="{2}">
+            <result name="Video" type="json">
+                <param name="root">result</param>
+            </result>
+            <interceptor-ref name="json"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <action name="barrage_*_*" class="{1}" method="{2}">
+            <result name="Barrage" type="json">
+                <param name="root">result</param>
+            </result>
+            <interceptor-ref name="json"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+    </package>
+</struts>

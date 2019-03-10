@@ -1,0 +1,84 @@
+<div class="container insideAlbum">
+
+    <div class="inside-top">
+        <div class="author">
+            <span>作者：{{user.name}}</span>
+        </div>
+        <div class="time">
+            <span>
+                <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                创建时间：<time>{{albumInfo.createTime}}</time>
+            </span>
+        </div>
+    </div>
+    <div class="inside-meddle">
+        <div class="page-header">
+            <h1>
+                {{albumInfo.title}}
+            </h1>
+        </div>
+        <p>
+            <a ng-click="setGood()">
+                <i class="fa fa-thumbs-up"></i>
+            </a>
+            <span class="badge">{{albumInfo.good}}</span>
+        </p>
+        <div class="info">
+            <h2>介绍:</h2>
+            <div class="info-content">
+                <p>{{albumInfo.albumIntroduction}}</p>
+                <i class="Quotes1"></i>
+                <i class="Quotes2"></i>
+            </div>
+        </div>
+    </div>
+    <div class="inside-buttom">
+        <div class="row">
+            <div infinite-scroll='reddit.nextPage()'
+                 infinite-scroll-disabled='reddit.busy'
+                 infinite-scroll-distance='0'
+                 class="galleryScroll">
+                <div>
+                    <div class="col-md-3 animated zoomIn" ng-repeat="item in reddit.imageList">
+                        <div class="inside-img-out">
+                            <div class="inside-img" ng-click="opGallery()">
+                                <img src="{{item}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="loading-self" ng-show='reddit.busy && reddit.imageList.length < reddit.imageLists.length && reddit.imageLists.length > 0'>
+                    <div class="mkeContentBox">
+                        <!--效果html开始-->
+                        <div class='loader'>
+                            <div class='loader_overlay'></div>
+                            <div class='loader_cogs'>
+                                <div class='loader_cogs__top'>
+                                    <div class='top_part'></div>
+                                    <div class='top_part'></div>
+                                    <div class='top_part'></div>
+                                    <div class='top_hole'></div>
+                                </div>
+                                <div class='loader_cogs__left'>
+                                    <div class='left_part'></div>
+                                    <div class='left_part'></div>
+                                    <div class='left_part'></div>
+                                    <div class='left_hole'></div>
+                                </div>
+                                <div class='loader_cogs__bottom'>
+                                    <div class='bottom_part'></div>
+                                    <div class='bottom_part'></div>
+                                    <div class='bottom_part'></div>
+                                    <div class='bottom_hole'></div>
+                                </div>
+                                <p>loading</p>
+                            </div>
+                        </div>
+                        <!--效果html结束-->
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

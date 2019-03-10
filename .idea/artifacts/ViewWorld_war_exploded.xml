@@ -1,0 +1,75 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ViewWorld:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ViewWorld_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ViewWorld/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ViewWorld" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/antlr-2.7.7.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/classmate-1.3.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/com.springsource.net.sf.cglib-2.2.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/com.springsource.org.aopalliance-1.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/commons-fileupload-1.3.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/commons-io-2.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/commons-lang3-3.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/commons-logging-1.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/dom4j-1.6.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/ejb3-persistence.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/freemarker-2.3.22.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/geronimo-jta_1.1_spec-1.1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/hibernate-commons-annotations-4.0.2.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/hibernate-core-4.2.2.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/hibernate-entitymanager-4.2.2.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/hibernate-envers-4.2.2.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/hibernate-proxool-4.2.2.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/jackson-annotations-2.2.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/jackson-core-2.2.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/jackson-databind-2.2.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/jandex-2.0.0.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/javassist-3.7.1.ga.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/jboss-logging-3.1.0.GA.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/junit-4.10.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/mchange-commons-java-0.2.3.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/morph-1.1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/mysql-connector-java-5.1.18-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/mysql-connector-java-5.1.35-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/ognl-3.0.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/proxool-0.9.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/proxool-cglib-0.9.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/servlet-2-3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-aop-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-aspects-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-beans-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-context-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-context-support-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-core-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-expression-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-instrument-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-instrument-tomcat-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-jdbc-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-jms-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-messaging-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-orm-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-oxm-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-test-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-tx-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-web-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-webmvc-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-webmvc-portlet-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/spring-websocket-4.2.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/sqljdbc4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/struts2-core-2.3.24.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/struts2-json-plugin-2.3.24.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/struts2-spring-plugin-2.3.24.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../lib/xwork-core-2.3.24.1.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

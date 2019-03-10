@@ -1,0 +1,436 @@
+<div class="imageFocus">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="focusbox"></div>
+                <div id="viewFocus"><!--焦点图盒子-->
+                    <div class="loading"><img src="../style/image/imageFocus/loading.gif" alt="请稍候..." /></div><!--载入画面(可删除)-->
+                    <div class="pic"><!--内容列表(li数目可随意增减)-->
+                        <ul class="viewFocus">
+                            <li><a href="#"><img src="../style/image/imageFocus/1a.jpg" thumb="" alt="速度与激情" text="动作/犯罪/剧情" /></a></li>
+                            <li><a href="#"><img src="../style/image/imageFocus/2a.jpg" thumb="" alt="Running Man" text="大型户外竞技真人秀" /></a></li>
+                            <li><a href="#"><img src="../style/image/imageFocus/3a.jpg" thumb="" alt="AOA" text="歌手/乐队" /></a></li>
+                            <li><a href="#"><img src="../style/image/imageFocus/4a.jpg" thumb="" alt="三生三世十里桃花" text="古装/爱情/仙侠/玄幻" /></a></li>
+                            <li><a href="#"><img src="../style/image/imageFocus/5a.jpg" thumb="" alt="美女与野兽" text="美国迪士尼于1991年出品的动画电影" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--内容块-->
+<div class="container home-body">
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <div class="row video-row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row video-identification">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h3>视频区</h3>
+                        </div>
+                    </div>
+                    <div class="row video-high">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                <div class="video-high-title">
+                                    <div class="title-image">
+                                        <img src="../style/image/promotion.png">
+                                    </div>
+                                    <div class="title-big">推广</div>
+                                    <div class="title-small">
+                                        <div class="title-small-link"><a href="#">厉害了我的版头Σ(゜ロ゜;)</a></div>
+                                        <div class="title-small-link"><a href="#">时尚风貌</a></div>
+                                        <div class="title-small-link"><a href="#">我是谁？</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-7 video-high-left">
+                                <div class="video-play">
+                                    <video id="video" class="video-js vjs-default-skin vjs-big-play-centered vjs-big-play-button video"
+                                           controls preload="auto" width="100%" height="100%"
+                                           data-setup='' loop>
+                                        <source src="../resources/video/9999/8888/[Saenai_Heroine_no_Sodatekata][00][GB_JP][1080P]【渚鹿汐】.mp4" type='video/mp4' />
+                                        <!--<source src="video/video.webm" type='video/webm' />-->
+                                        <!--<source src="video/video.ogv" type='video/ogg' />-->
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-5 video-high-right">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 max-width-367">
+                                        <div class="video-high-row1">
+                                            <div class="covering-layer" ng-click="goToVideoPlay(videoPromotion[0].videoId,0)">
+                                                <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                                                <p>Up主：{{videoPromotion[0].userName}}</p>
+                                                <p>Good：{{videoPromotion[0].score}}</p>
+                                            </div>
+                                            <div class="video-high-content">
+                                                <img ng-src="{{videoPromotion[0].pictureName}}">
+                                                <div class="video-info-up">
+                                                    <p class="video-info">{{videoPromotion[0].title}}</p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
+                                        <div class="video-high-row1">
+                                            <div class="covering-layer" ng-click="goToVideoPlay(videoPromotion[2].videoId,0)">
+                                                <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                                                <p>Up主：{{videoPromotion[2].userName}}</p>
+                                                <p>Good：{{videoPromotion[2].score}}</p>
+                                            </div>
+                                            <div class="video-high-content">
+                                                <img ng-src="{{videoPromotion[2].pictureName}}">
+                                                <div class="video-info-up">
+                                                    <p class="video-info">{{videoPromotion[2].title}}</p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 max-width-367">
+                                        <div class="video-high-row2">
+                                            <div class="covering-layer" ng-click="goToVideoPlay(videoPromotion[1].videoId,0)">
+                                                <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                                                <p>Up主：{{videoPromotion[1].userName}}</p>
+                                                <p>Good：{{videoPromotion[1].score}}</p>
+                                            </div>
+                                            <div class="video-high-content">
+                                                <img ng-src="{{videoPromotion[1].pictureName}}">
+                                                <div class="video-info-up">
+                                                    <p class="video-info">{{videoPromotion[1].title}}</p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
+                                        <div class="video-high-row2">
+                                            <div class="covering-layer" ng-click="goToVideoPlay(videoPromotion[3].videoId,0)">
+                                                <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                                                <p>Up主：{{videoPromotion[3].userName}}</p>
+                                                <p>Good：{{videoPromotion[3].score}}</p>
+                                            </div>
+                                            <div class="video-high-content">
+                                                <img ng-src="{{videoPromotion[3].pictureName}}">
+                                                <div class="video-info-up">
+                                                    <p class="video-info">{{videoPromotion[3].title}}</p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row video-recommend">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                <div class="video-recommend-title">
+                                    <div class="title-image">
+                                        <img src="../style/image/recommend.png">
+                                    </div>
+                                    <div class="title-big">最赞</div>
+                                    <div class="title-small">
+                                        <div class="title-small-link"><a href="#">厉害了我的版头Σ(゜ロ゜;)</a></div>
+                                        <div class="title-small-link"><a href="#">时尚风貌</a></div>
+                                        <div class="title-small-link"><a href="#">我是谁？</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 video-block col-562-width col-367-width" ng-repeat="item in videoHot" ng-class="$index >= 6? 'max-width-562':''">
+                                <div class="video-block-body">
+                                    <div class="recommend-image">
+                                        <img ng-src="{{item.pictureName}}">
+                                        <div class="recommend-good">
+                                            <i class="glyphicon glyphicon-heart"></i>
+                                            <span>{{item.score}}</span>
+                                        </div>
+                                        <div class="covering-layer" ng-click="goToVideoPlay(item.videoId,0)">
+                                            <h3 class="covering-layer-recommend">
+                                                <i class="glyphicon glyphicon-play-circle"></i>
+                                                <strong>LOVE</strong>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="video-block-headimg">
+                                        <img ng-src="{{item.headImageSrc}}" class="img-circle">
+                                    </div>
+                                    <div class="recommend-info">
+                                        <p class="recommend-info-p">{{item.userName}}</p>
+                                        <p>{{item.videoIntroduction}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row image-row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row image-identification">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h3>画廊区</h3>
+                        </div>
+                    </div>
+                    <div class="row image-high">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                <div class="image-high-title">
+                                    <div class="title-image">
+                                        <img src="../style/image/imagehigh.png">
+                                    </div>
+                                    <div class="title-big">视窗</div>
+                                    <div class="title-small">
+                                        <div class="title-small-link"><a href="#">厉害了我的版头Σ(゜ロ゜;)</a></div>
+                                        <div class="title-small-link"><a href="#">时尚风貌</a></div>
+                                        <div class="title-small-link"><a href="#">我是谁？</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="image-high-focus">
+                                    <div id="imageFocus"><!--焦点图盒子-->
+                                        <div class="loading"><img src="../style/image/imageFocus/loading.gif" alt="请稍候..." /></div><!--载入画面(可删除)-->
+                                        <div class="pic"><!--内容列表(li数目可随意增减)-->
+                                            <ul class="imageFocus">
+                                                <li><a href="#"><img src="../style/image/imageFocus/1a.jpg" thumb="" alt="标题1" text="详细描述1" /></a></li>
+                                                <li><a href="#"><img src="../style/image/imageFocus/2a.jpg" thumb="" alt="标题2" text="详细描述2" /></a></li>
+                                                <li><a href="#"><img src="../style/image/imageFocus/3a.jpg" thumb="" alt="标题3" text="详细描述3" /></a></li>
+                                                <li><a href="#"><img src="../style/image/imageFocus/4a.jpg" thumb="" alt="标题4" text="详细描述4" /></a></li>
+                                                <li><a href="#"><img src="../style/image/imageFocus/5a.jpg" thumb="" alt="标题5" text="详细描述5" /></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row image-recommend">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                <div class="image-recommend-title">
+                                    <div class="title-image">
+                                        <img src="../style/image/gallerywindow.png">
+                                    </div>
+                                    <div class="title-big">安利墙</div>
+                                    <div class="title-small">
+                                        <div class="title-small-link"><a href="#">厉害了我的版头Σ(゜ロ゜;)</a></div>
+                                        <div class="title-small-link"><a href="#">时尚风貌</a></div>
+                                        <div class="title-small-link"><a href="#">我是谁？</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 col-367-width col-recommend-1">
+                                <div class="image-body animated zoomIn" ng-repeat=" item in reddit.imageItemOne">
+                                    <div class="image-block">
+                                        <img ng-src="{{item.pictureName}}">
+                                        <div class="covering-layer" ng-click="goToInsideAlbum( 'One' , $index )">
+                                            <h3><i class="glyphicon glyphicon-search"></i></h3>
+                                        </div>
+                                    </div>
+                                    <div class="image-info">
+                                        <a ng-click="goToInsideAlbum( 'One' , $index )">
+                                            <p>{{item.albumIntroduction}}</p>
+                                        </a>
+                                        <i class="Quotes1"></i>
+                                        <i class="Quotes2"></i>
+                                    </div>
+                                    <div class="image-tip">
+                                        <div class="image-user">
+                                            <strong><i>— </i>{{item.userName}}</strong>
+                                        </div>
+                                        <div class="image-good"><i class="glyphicon glyphicon-heart"></i><span> {{item.good}} </span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 max-width-367 col-recommend-2 ">
+                                <div class="image-body animated zoomIn" ng-repeat=" item in reddit.imageItemTwo">
+                                    <div class="image-block">
+                                        <img ng-src="{{item.pictureName}}">
+                                        <div class="covering-layer" ng-click="goToInsideAlbum( 'Two' , $index )">
+                                            <h3><i class="glyphicon glyphicon-search"></i></h3>
+                                        </div>
+                                    </div>
+                                    <div class="image-info">
+                                        <a ng-click="goToInsideAlbum( 'Two' , $index )">
+                                            <p>{{item.albumIntroduction}}</p>
+                                        </a>
+                                        <i class="Quotes1"></i>
+                                        <i class="Quotes2"></i>
+                                    </div>
+                                    <div class="image-tip">
+                                        <div class="image-user">
+                                            <strong><i>— </i>{{item.userName}}</strong>
+                                        </div>
+                                        <div class="image-good"><i class="glyphicon glyphicon-heart"></i><span> {{item.good}} </span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-recommend-3 hidden-xs">
+                                <div class="image-body animated zoomIn" ng-repeat=" item in reddit.imageItemThree">
+                                    <div class="image-block">
+                                        <img ng-src="{{item.pictureName}}">
+                                        <div class="covering-layer" ng-click="goToInsideAlbum( 'Three' , $index )">
+                                            <h3><i class="glyphicon glyphicon-search"></i></h3>
+                                        </div>
+                                    </div>
+                                    <div class="image-info">
+                                        <a ng-click="goToInsideAlbum( 'Three' , $index )">
+                                            <p>{{item.albumIntroduction}}</p>
+                                        </a>
+                                        <i class="Quotes1"></i>
+                                        <i class="Quotes2"></i>
+                                    </div>
+                                    <div class="image-tip">
+                                        <div class="image-user">
+                                            <strong><i>— </i>{{item.userName}}</strong>
+                                        </div>
+                                        <div class="image-good"><i class="glyphicon glyphicon-heart"></i><span> {{item.good}} </span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="image-updata-btn">
+                                <buttom class="btn btn-info image-btn" ng-click="Updata()" ng-show='!reddit.busy && reddit.CurrentPage < reddit.TotalPage'>更多</buttom>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+            <div class="row ad-column-row1">
+                <div class="column-row1-top">
+                    <img src="../style/image/icon_1.png">
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <div class="column-row1-bottom">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="row1-bottom-image">
+                                    <img src="../style/image/Benson1.png">
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <h4>关注我~</h4>
+                                <p><strong>创建者：</strong><span>Benson</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ad-column-row2">
+                <div class="col-lg-12 col-md-12">
+                    <div class="column-row2-title">
+                        <h3>视频排行榜</h3>
+                        <a href="#"><strong>更多</strong></a>
+                    </div>
+                    <div class="column-row2-body">
+                        <ul class="row2-body-ul">
+                            <li class="row2-body-li" ng-repeat="item in videoHot" ng-if="$index < 5">
+                                <span class="li-span">{{$index+1}}</span>
+                                <a ng-click="goToVideoPlay(item.videoId,0)" class="li-a">
+                                    <img ng-src="{{item.pictureName}}">
+                                </a>
+                                <div class="li-text">
+                                    <a ng-click="goToVideoPlay(item.videoId,0)">{{item.title}}</a>
+                                    <p><i class="glyphicon glyphicon-heart"></i><span> {{item.score}}</span></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row ad-column-row3">
+                <div class="col-lg-12 col-md-12">
+                    <div class="column-row3-title">
+                        <h3>图片排行榜</h3>
+                        <a href="#"><strong>更多</strong></a>
+                    </div>
+                    <div class="column-row3-body">
+                        <ul class="row3-body-ul">
+                            <li class="row3-body-li" ng-repeat="item in albumGoodLevel" ng-if="$index < 5">
+                                <span class="li-span">{{$index+1}}</span>
+                                <a class="li-a" ng-click="goToInsideAlbumRight(item.albumId)">
+                                    <img ng-src="{{item.pictureName}}">
+                                </a>
+                                <div class="li-text">
+                                    <a ng-click="goToInsideAlbumRight(item.albumId)">{{item.title}}</a>
+                                    <p><i class="glyphicon glyphicon-heart"></i><span> {{item.good}}</span></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row ad-column-row4">
+                <div class="col-lg-12 col-md-12">
+                    <div class="column-row4-title">
+                        <h3>最新评论</h3>
+                        <a href="#"><strong>更多</strong></a>
+                    </div>
+                    <div class="column-row4-body">
+                        <ul class="row4-body-ul">
+                            <li class="row4-body-li" ng-repeat="item in commentVideo" ng-if="$index < 3">
+                                <a ng-click="goToInsideAlbumRight(item.albumId)" class="li-a">
+                                    <img ng-src="{{item.pictureName}}">
+                                </a>
+                                <div class="li-text">
+                                    <a ng-click="goToInsideAlbumRight(item.albumId)">{{item.videoName}}</a>
+                                    <p>弹幕量:<span> {{videoEntityList[$index].barrageNum}}</span></p>
+                                </div>
+                                <div class="li-comment">
+                                    <a>
+                                        <p>{{item.content}}</p>
+                                    </a>
+                                    <i class="Quotes1"></i>
+                                    <i class="Quotes2"></i>
+                                </div>
+                                <div class="li-tip">
+                                    <div class="tip-user">
+                                        <strong><i>— </i>{{item.replyName}}</strong>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row ad-column-row5">
+                <div class="col-lg-12 col-md-12">
+                    <div class="column-row5-title">
+                        <h3>推荐</h3>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <ul class="colum-row5-ul">
+                        <li>
+                           <a href="http://119.29.165.93/index3.html" target="_blank">
+                               <img src="../style/image/Other1.png">
+                           </a> 
+                        </li>
+                        <li>
+                            <a href="http://xbenson.cn/blibli/video.html" target="_blank">
+                                <img src="../style/image/Other2.png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

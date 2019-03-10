@@ -1,0 +1,121 @@
+<div class="editMyselfData">
+    <div class="container">
+        <h4 class="edit-top">基本信息</h4>
+        <div class="edit-content">
+            <div class="row">
+                <div class="col-md-12"  nv-file-drop uploader="uploader" accept="image/gif,image/jpeg,image/png,image/jpg">
+                    <a class="img-header" ng-click="opImageUploadInput()">
+                        <img src="../style/image/icon_2.png" class="img-circle headImageDom">
+                        <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
+                    </a>
+                    <input type="file" id="headImage"  nv-file-select uploader="uploader" accept="image/gif,image/jpeg,image/png,image/jpg" >
+                    <a class="modifyImage" data-toggle="modal" ng-click="opModifyImageDialog()">{{modifyInfo}}</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="from-out-div">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-5 control-label">昵称</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputName" placeholder="昵称" ng-model="userInfo.name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label">设置密码</label>
+                                <div class="col-sm-4">
+                                    <a class="setPw" ui-sref="main.setPw">设置密码</a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label">生日</label>
+                                <div class="col-sm-4 editMyselfData-select">
+                                    <select name="day" id="day" ng-model="userInfo.birthday.selDay" ng-options="day.day for day in days" ng-click="focusEvent(1)">
+                                        <option value="">日</option>
+                                    </select>
+                                    <select name="month" id="month" ng-model="userInfo.birthday.selMonths" ng-options="month.month for month in months" ng-change="yearAndMonthChange()" ng-click="focusEvent(1)">
+                                        <option value="">月</option>
+                                    </select>
+                                    <select name="year" id="year" ng-model="userInfo.birthday.selYears" ng-options="year.year for year in years" ng-change="yearAndMonthChange()" ng-click="focusEvent(1)">
+                                        <option value="">年</option>
+                                    </select>
+                                    <a tabindex="0" class="popoverStyle editBirthday" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-original-title="" data-content="须填写完整或恢复默认"></a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label">性别</label>
+                                <div class="col-sm-4 editMyselfData-select">
+                                    <select name="sex" id="sex" ng-model="userInfo.selSex" ng-options="sex.key for sex in sexs">
+                                        <option value="">性别</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label">国籍</label>
+                                <div class="col-sm-4 editMyselfData-select">
+                                    <select name="country" id="country" ng-model="userInfo.selCountry" ng-options="Country.key for Country in Countrys">
+                                        <option value="">国籍</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputIntroduction" class="col-sm-5 control-label">简介</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputIntroduction" placeholder="简介" ng-model="userInfo.briefIntroduction">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPhone" class="col-sm-5 control-label">手机</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputPhone" placeholder="手机" ng-model="userInfo.phone" ng-click="focusEvent(2)">
+                                    <a tabindex="0" class="popoverStyle editPhone" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-original-title="" data-content="手机不合法"></a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-5 col-sm-4">
+                                    <button type="submit" class="btn btn-default" ng-click="editMyselfDataEvent()">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-->
+<div class="modal fade modifyImageDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"  ng-click="closeModifyImage()"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="myModalLabel">修改图片</h4>
+            </div>
+            <div class="modal-body modifyImageDialog-body">
+                <div class="box">
+                    <img src="../style/image/imageFocus/1a.jpg" class="img1">
+                    <img src="../style/image/imageFocus/1a.jpg" class="img2">
+                    <div class="main">
+                        <div class="minDiv left-up"></div>
+                        <div class="minDiv up"></div>
+                        <div class="minDiv right-up"></div>
+                        <div class="minDiv right"></div>
+                        <div class="minDiv right-down"></div>
+                        <div class="minDiv down"></div>
+                        <div class="minDiv left-down"></div>
+                        <div class="minDiv left"></div>
+                    </div>
+                </div>
+                <div class="preview">
+                    <img src="../style/image/imageFocus/1a.jpg" class="img3">
+                </div>
+                <canvas id="canvas"></canvas>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeModifyImage()">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="saveModifyImage()">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="Custom">
+    <div class="container">
+        <div class="row Custom-body">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="nav-content">
+                    <div class="nav-header"></div>
+                    <div class="nav-body sugBody">
+                        <div class="sugIcon"><i class="fa fa-envelope fa-4x"></i></div>
+                        <div class="sugInfo">
+                            <h3>您提交的问题将会在</h3>
+                            <div class="sugInfoSpan"><span>24小时</span></div>
+                            <h4>内得到处理，如需了解最新情况请到“<strong>我的服务</strong>”中查看！</h4>
+                            <p>问题处理后，我们会第一时间以站内信的形式告知：<a ui-sref="main.myService">我的服务</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <div class="Custom-right">
+                    <div class="nav-top">
+                        <ol class="breadcrumb">
+                            <li><a>客服</a></li>
+                            <li class="active">意见箱</li>
+                        </ol>
+                    </div>
+                    <div class="Custom-right-content">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <ul class="list-unstyled sug-ul">
+                                <li>
+                                    <span class="field-form">您的反馈类型是：</span>
+                                    <input autocomplete="off" type="radio" class="feedback_radio" name="feedback_radio" id="feedback_radio1" value="1" ng-true-value="1" ng-false-value="N" ng-model="backText.radioText"><label class="feedback_radio_lab" for="feedback_radio1">网站问题</label>
+                                    <input autocomplete="off" type="radio" class="feedback_radio" name="feedback_radio" id="feedback_radio2" value="2" ng-true-value="2" ng-false-value="N" ng-model="backText.radioText"><label class="feedback_radio_lab" for="feedback_radio2">视频/图片问题</label>
+                                    <input autocomplete="off" type="radio" class="feedback_radio" name="feedback_radio" id="feedback_radio3" value="3" ng-true-value="3" ng-false-value="N" ng-model="backText.radioText"><label class="feedback_radio_lab" for="feedback_radio3">账户问题/投诉建议</label>
+                                    <input autocomplete="off" type="radio" class="feedback_radio" name="feedback_radio" id="feedback_radio4" value="0" ng-true-value="0" ng-false-value="N" ng-model="backText.radioText"><label class="feedback_radio_lab" for="feedback_radio4">其它</label>
+                                </li>
+                                <li class="sug-form">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="inputTitle1" class="col-sm-2 control-label">标题</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="inputTitle1" placeholder="请输入1-12个字" data-verify="[1, 12]" autocomplete="off" maxlength="12" ng-model="backText.inputText">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="feedback_textarea" class="col-sm-2 control-label">内容</label>
+                                            <div class="col-sm-10">
+                                                <textarea id="feedback_textarea" class="form-control" rows="12" data-verify="[1, 1000]" maxlength="1000" autocomplete="off" ng-model="backText.areaText" placeholder="亲爱的会员，希望您提出中肯的反馈，我们会认真对待每一个会员的反馈，持续改进服务以获得您的认可。涉及具体页面，请附上相关链接，非常感谢。（请输入1-1000个字）"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <!--<button type="submit" class="btn btn-default form-Sign" ng-click="sugSub()">投递</button>-->
+                                                <a class="button button-glow button-rounded button-royal form-Sign" ng-click="sugSub()">投递</a>
+                                                <p id="ErrorBack" class="ErrorBack" ng-show="getErrorBack('show')">请选择和填写反馈信息</p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,216 @@
+<div class="Custom">
+    <div class="container">
+        <div class="row Custom-body">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="nav-content">
+                    <div class="nav-header"></div>
+                    <div class="nav-body">
+                        <div class="accordion">
+                            <div class="group">
+                                <h4 class="header-btn">
+                                    <i class="fa fa-home fa-fw fa-lg"></i>
+                                    关于我们
+                                    <i class="fa fa-plus plus-rotate"></i>
+                                </h4>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a ng-click="WebInfo()">
+                                                网站简介
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a ng-click="WebDesc()">
+                                                版权说明
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a ng-click="Author()">
+                                                作者简介
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <h4 class="header-btn">
+                                    <i class="fa fa-search fa-fw fa-lg"></i>
+                                    常见问题
+                                    <i class="fa fa-plus"></i>
+                                </h4>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a ng-click="LoginAndRegister()">
+                                                登录/注册问题
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a ng-click="ImageAndVideo()">
+                                                图像/视频问题
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <h4 class="header-btn">
+                                    <i class="fa fa-book fa-fw fa-lg"></i>
+                                    用户说明
+                                    <i class="fa fa-plus"></i>
+                                </h4>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a ng-click="UserKnow()">
+                                                用户须知
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a ng-click="UserAuthority()">
+                                                用户权限
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <div class="Custom-right">
+                    <div ng-include="templateModel" onload=""></div>
+                    <div class="Suggestion">
+                        <div class="SuggestionOption">
+                            <p ng-if="getSugShow('Option')">以上是否解决了您疑问？</p>
+                            <p ng-if="getSugShow('Yes')">提交成功！非常感谢您的反馈，我们会继续努力做到更好！</p>
+                            <p ng-if="getSugShow('No')">为了我们更有效，针对性的改善我们的服务，我们很需要您进一步的反馈信息：</p>
+                            <button type="button" class="btn btn-primary" ng-if="getSugShow('Option')" ng-click="setSugShow('Yes')">Yes</button>
+                            <button type="button" class="btn btn-danger" ng-if="getSugShow('Option')" ng-click="setSugShow('No')">No</button>
+                        </div>
+                        <div class="UserBack" ng-if="getSugShow('No')">
+                            <ul class="list-unstyled">
+                                <li><label class="UserBack-label"><input value="页面内容不全面，不深入" name="" type="radio" class="UserBack-radio" ng-true-value="页面内容不全面，不深入" ng-false-value="N" ng-model="backText.radioText">页面内容不全面，不深入</label></li>
+                                <li><label class="UserBack-label"><input value="页面内容更新不及时" name="" type="radio" class="UserBack-radio" ng-true-value="页面内容更新不及时" ng-false-value="N" ng-model="backText.radioText">页面内容更新不及时</label></li>
+                                <li><label class="UserBack-label"><input value="描述不够清晰，比较混乱" name="" type="radio" class="UserBack-radio" ng-true-value="描述不够清晰，比较混乱" ng-false-value="N" ng-model="backText.radioText">描述不够清晰，比较混乱</label></li>
+                                <li><label class="UserBack-label"><input value="系统或功能太复杂，同时文档也缺乏足够的引导" name="" type="radio" class="UserBack-radio" ng-true-value="系统或功能太复杂，同时文档也缺乏足够的引导" ng-false-value="N" ng-model="backText.radioText">系统或功能太复杂，同时文档也缺乏足够的引导</label></li>
+                            </ul>
+                            <textarea id="feedbackText" rows="5" cols="80" ng-model="backText.areaText" class="UserBack-input-textarea" placeholder="您可以在这里输入更多意见和建议（限200字以内）"></textarea>
+                            <a tabindex="0" class="popoverStyle feedback feedbackText-1" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-original-title="" data-content="字数不能超过200字"></a>
+                            <br>
+                            <button type="button" class="btn btn-primary" ng-click="userBackSub()">提交</button>
+                            <button type="button" class="btn btn-danger" ng-click="setSugShow('Option')">取消</button>
+                            <p id="ErrorBack" class="ErrorBack">请至少选择或填写一项反馈信息</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--网站简介-->
+<script type="text/ng-template" id="WebInfo.html">
+    <div class="nav-top">
+        <ol class="breadcrumb">
+            <li><a>客服</a></li>
+            <li><a>关于我们</a></li>
+            <li class="active">网站简介</li>
+        </ol>
+    </div>
+    <div class="Custom-right-content">
+        <ul>
+            <li><p>网站简介。</p></li>
+        </ul>
+    </div>
+</script>
+<!--版权说明-->
+<script type="text/ng-template" id="WebDesc.html">
+    <div class="nav-top">
+        <ol class="breadcrumb">
+            <li><a>客服</a></li>
+            <li><a>关于我们</a></li>
+            <li class="active">版权说明</li>
+        </ol>
+    </div>
+    <div class="Custom-right-content">
+        <ul>
+            <li><p>版权说明。</p></li>
+        </ul>
+    </div>
+</script>
+<!--作者说明-->
+<script type="text/ng-template" id="Author.html">
+    <div class="nav-top">
+        <ol class="breadcrumb">
+            <li><a>客服</a></li>
+            <li><a>关于我们</a></li>
+            <li class="active">作者说明</li>
+        </ol>
+    </div>
+    <div class="Custom-right-content">
+        <ul>
+            <li><p>版权说明。</p></li>
+        </ul>
+    </div>
+</script>
+<!--登录与注册问题-->
+<script type="text/ng-template" id="LoginAndRegister.html">
+    <div class="nav-top">
+        <ol class="breadcrumb">
+            <li><a>客服</a></li>
+            <li><a>常见问题</a></li>
+            <li class="active">登录与注册问题</li>
+        </ol>
+    </div>
+    <div class="Custom-right-content">
+        <ul>
+            <li><p>登录与注册问题。</p></li>
+        </ul>
+    </div>
+</script>
+<!--图像与视频问题-->
+<script type="text/ng-template" id="ImageAndVideo.html">
+    <div class="nav-top">
+        <ol class="breadcrumb">
+            <li><a>客服</a></li>
+            <li><a>常见问题</a></li>
+            <li class="active">图像与视频问题</li>
+        </ol>
+    </div>
+    <div class="Custom-right-content">
+        <ul>
+            <li><p>图像与视频问题。</p></li>
+        </ul>
+    </div>
+</script>
+<!--用户须知-->
+<script type="text/ng-template" id="UserKnow.html">
+    <div class="nav-top">
+        <ol class="breadcrumb">
+            <li><a>客服</a></li>
+            <li><a>用户说明</a></li>
+            <li class="active">用户须知</li>
+        </ol>
+    </div>
+    <div class="Custom-right-content">
+        <ul>
+            <li><p>用户须知。</p></li>
+        </ul>
+    </div>
+</script>
+<!--用户权限-->
+<script type="text/ng-template" id="UserAuthority.html">
+    <div class="nav-top">
+        <ol class="breadcrumb">
+            <li><a>客服</a></li>
+            <li><a>用户说明</a></li>
+            <li class="active">用户权限</li>
+        </ol>
+    </div>
+    <div class="Custom-right-content">
+        <ul>
+            <li><p>用户权限。</p></li>
+        </ul>
+    </div>
+</script>

@@ -1,0 +1,69 @@
+/* colorpicker styles */
+.colorpicker {
+    background-color: #222222;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 2px 2px 2px #444444;
+    color: #FFFFFF;
+    font-size: 12px;
+    position: absolute;
+    width: 260px;
+    height: 176px;
+    top: -178px;
+    z-index: 5;
+    display: none;
+}
+#picker {
+    cursor: crosshair;
+    float: left;
+    margin: 10px;
+    border: 0;
+}
+.controls-right {
+    float: right;
+    margin: 10px 10px 0 10px;
+}
+.controls-down{
+    float: left;
+    margin: 0 10px 10px 10px;
+}
+.controls-right > div{
+    border: 1px solid #2F2F2F;
+    margin-bottom: 5px;
+    overflow: hidden;
+    padding: 5px;
+}
+.controls-down > div{
+    float: left;
+    border: 1px solid #2F2F2F;
+    margin-bottom: 5px;
+    overflow: hidden;
+    padding: 5px;
+}
+.controls-right label,
+.controls-down label{
+    float: left;
+}
+.controls-right > div input{
+    background-color: #121212;
+    border: 1px solid #2F2F2F;
+    color: #DDDDDD;
+    float: right;
+    font-size: 10px;
+    height: 18px;
+    margin-left: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 75px;
+}
+.controls-down > div input{
+    background-color: #121212;
+    border: 1px solid #2F2F2F;
+    color: #DDDDDD;
+    float: left;
+    font-size: 10px;
+    height: 18px;
+    margin-left: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 75px;
+}

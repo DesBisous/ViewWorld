@@ -1,0 +1,32 @@
+<div class="userOp">
+    <div class="container">
+        <div class="row">
+            <div class="form-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group groupBorder">
+                        <label for="User" class="col-sm-2 control-label"><i class="fa fa-user fa-2x faUser"></i></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control inputUser" id="User" placeholder="账号" ng-model="userInfo.account" ng-focus="focusEvent(1)">
+                            <a tabindex="0" class="popoverStyle popoverReg-1" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-original-title="" data-content="{{popoverInfo.content}}"></a>
+                        </div>
+                    </div>
+                    <br/>
+                    <p ng-if="showPw">
+                        密码：<span ng-bind="userInfo.password"></span>
+                    </p>
+                    <br/>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn submitBtn" ng-click="findPwEvent()">提交</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="login-link">
+                    <div class="goLogin">
+                        <a ui-sref="main.login"><span>&nbsp;登录</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

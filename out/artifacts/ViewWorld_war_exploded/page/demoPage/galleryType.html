@@ -1,0 +1,135 @@
+<div infinite-scroll='reddit.nextPage()'
+     infinite-scroll-disabled='reddit.busy'
+     infinite-scroll-distance='0'
+     class="galleryScroll">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-367-width ">
+        <div class="gallery-imge-item animated zoomIn" ng-repeat=" item in reddit.imageItemOne">
+            <div class="item-content" >
+                <div class="item-top">
+                    <img ng-click="goToInsideAlbum( 'One' , $index )" ng-src="{{item.pictureName}}" onerror="javascript:this.src='../style/image/icon_2.png'" alt="">
+                    <div class="time">
+                        <span class="tip-time">(<span>{{item.createTime}}</span>)</span>
+                    </div>
+                </div>
+                <div class="item-moddle">
+                    <a>
+                        <p ng-click="goToInsideAlbum( 'One' , $index )" class="ng-binding">{{item.albumIntroduction}}</p>
+                    </a>
+                    <i class="Quotes1"></i>
+                    <i class="Quotes2"></i>
+                </div>
+                <div class="item-bottom">
+                    <img ng-click="goToAlbum( 'One' , $index )" ng-src="{{item.headImageSrc}}" onerror="javascript:this.src='../style/image/icon_2.png'" alt="" class="img-rounded" width="40" height="40">
+                    <div class="liveAndAuthor">
+                        <span ng-click="goToAlbum( 'One' , $index )" class="userName">{{item.userName}}</span>
+                        <div class="live">
+                            <i class="glyphicon glyphicon-heart"></i>
+                            <span class="ng-binding"> {{item.good}} </span>
+                        </div>
+                    </div>
+                    <div class="concernBtn">
+                        <a class="button button-glow button-rounded button-royal" ng-click="addUserConcern( 'One' , $index )">关注</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 max-width-367">
+        <div class="gallery-imge-item animated zoomIn" ng-repeat=" item in reddit.imageItemTwo">
+            <div class="item-content" >
+                <div class="item-top">
+                    <img ng-click="goToInsideAlbum( 'Two' , $index )" ng-src="{{item.pictureName}}" onerror="javascript:this.src='../style/image/icon_2.png'" alt="">
+                    <div class="time">
+                        <span class="tip-time">(<span>{{item.createTime}}</span>)</span>
+                    </div>
+                </div>
+                <div class="item-moddle">
+                    <a>
+                        <p class="ng-binding" ng-click="goToInsideAlbum( 'Two' , $index )">{{item.albumIntroduction}}</p>
+                    </a>
+                    <i class="Quotes1"></i>
+                    <i class="Quotes2"></i>
+                </div>
+                <div class="item-bottom">
+                    <img ng-click="goToAlbum( 'Two' , $index )" ng-src="{{item.headImageSrc}}" onerror="javascript:this.src='../style/image/icon_2.png'" alt="" class="img-rounded" width="40" height="40">
+                    <div class="liveAndAuthor">
+                        <span ng-click="goToAlbum( 'Two' , $index )" class="userName">{{item.userName}}</span>
+                        <div class="live">
+                            <i class="glyphicon glyphicon-heart"></i>
+                            <span class="ng-binding"> {{item.good}} </span>
+                        </div>
+                    </div>
+                    <div class="concernBtn">
+                        <a class="button button-glow button-rounded button-royal" ng-click="addUserConcern( 'Two' , $index )">关注</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 visible-lg visible-md">
+        <div class="gallery-imge-item animated zoomIn" ng-repeat=" item in reddit.imageItemThree">
+            <div class="item-content" >
+                <div class="item-top">
+                    <img ng-click="goToInsideAlbum( 'Three' , $index )" ng-src="{{item.pictureName}}" onerror="javascript:this.src='../style/image/icon_2.png'" alt="">
+                    <div class="time">
+                        <span class="tip-time">(<span>{{item.createTime}}</span>)</span>
+                    </div>
+                </div>
+                <div class="item-moddle">
+                    <a>
+                        <p ng-click="goToInsideAlbum( 'Three' , $index )" class="ng-binding">{{item.albumIntroduction}}</p>
+                    </a>
+                    <i class="Quotes1"></i>
+                    <i class="Quotes2"></i>
+                </div>
+                <div class="item-bottom">
+                    <img ng-click="goToAlbum( 'Three' , $index )" ng-src="{{item.headImageSrc}}" onerror="javascript:this.src='../style/image/icon_2.png'" alt="" class="img-rounded" width="40" height="40">
+                    <div class="liveAndAuthor">
+                        <span g-click="goToAlbum( 'Three' , $index )" class="userName">{{item.userName}}</span>
+                        <div class="live">
+                            <i class="glyphicon glyphicon-heart"></i>
+                            <span class="ng-binding"> {{item.good}} </span>
+                        </div>
+                    </div>
+                    <div class="concernBtn">
+                        <a class="button button-glow button-rounded button-royal" ng-click="addUserConcern( 'Three' , $index )">关注</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loading-self gallery-loading" ng-show='reddit.busy && reddit.CurrentPage < reddit.TotalPage'>
+        <div class="mkeContentBox">
+            <!--效果html开始-->
+            <div class='loader'>
+                <div class='loader_overlay'></div>
+                <div class='loader_cogs'>
+                    <div class='loader_cogs__top'>
+                        <div class='top_part'></div>
+                        <div class='top_part'></div>
+                        <div class='top_part'></div>
+                        <div class='top_hole'></div>
+                    </div>
+                    <div class='loader_cogs__left'>
+                        <div class='left_part'></div>
+                        <div class='left_part'></div>
+                        <div class='left_part'></div>
+                        <div class='left_hole'></div>
+                    </div>
+                    <div class='loader_cogs__bottom'>
+                        <div class='bottom_part'></div>
+                        <div class='bottom_part'></div>
+                        <div class='bottom_part'></div>
+                        <div class='bottom_hole'></div>
+                    </div>
+                    <p>loading</p>
+                </div>
+            </div>
+            <!--效果html结束-->
+        </div>
+    </div>
+    <div class="NoFindService ng-scope" ng-if="reddit.allRow <= 0">
+        <p>没有相关数据</p>
+    </div>
+    <div class="clearfix"></div>
+</div>

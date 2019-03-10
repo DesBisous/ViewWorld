@@ -1,0 +1,308 @@
+<div class="videoPlayContent">
+    <div class="videoPlay-body">
+        <div class="videoPlay-info">
+            <div class="videoPlay-bg">
+                <div class="videoPlay-background"></div>
+            </div>
+            <div class="videoPlay-main">
+                <div class="videoPlay-content">
+                    <div class="videoPlay-preview">
+                        <img ng-src="{{videoInfo.pictureName}}" alt="猫咪日常">
+                    </div>
+                    <div class="videoPlay-info-r">
+                        <div class="videoPlay-info-head">
+                            <h3>{{videoInfo.title}}</h3>
+                        </div>
+                        <div class="videoPlay-info-guidepost">
+                            <p>{{videoInfo.label}}</p>
+                        </div>
+                        <div class="videoPlay-info-count">
+                            <ul class="videoPlay-count-ul">
+                                <li class="videoPlay-count-li">
+                                    <span class="videoPlay-count-label">总播放量</span>
+                                    <em>{{videoInfo.playNum}}</em>
+                                </li>
+                                <li class="videoPlay-count-li">
+                                    <span class="videoPlay-count-label">弹幕数量</span>
+                                    <em>{{videoInfo.barrageNum}}</em>
+                                </li>
+                                <li class="videoPlay-count-li">
+                                    <span class="videoPlay-count-label">分数</span>
+                                    <em>{{videoInfo.score}}</em>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="videoPlay-info-time">
+                            <span class="videoPlay-info-time-region">
+                                地区: {{videoInfo.region}}
+                            </span>
+                            <span class="videoPlay-info-time-item">
+                                发布时间: {{videoInfo.createTime}}
+                            </span>
+                        </div>
+                        <div class="videoPlay-info-wrp">
+                            <div class="videoPlay-info-wrp-label">简介:</div>
+                            <div class="videoPlay-info-wrp-desc" ng-class="isMove?'move':''">
+                                {{videoInfo.videoIntroduction}}
+                            </div>
+                            <a class="videoPlay-info-wrp-toggle" ng-click="opMoveDesc()">查看更多</a>
+                        </div>
+                        <div class="videoPlay-info-up">
+                            <img class="img-circle" ng-src="{{videoInfo.headImageSrc}}" width="35px" height="35px">
+                            <p>{{videoInfo.userName}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="videoPlay-wrapper">
+            <div class="videoPlay-module">
+                <div class="module-left">
+                    <div class="left-head" ng-class="expansionVideo?'expansionVideo':''">
+                        <div class="left-head-inner">
+                            <span>{{videoInfo.title}}</span>
+                        </div>
+                    </div>
+                    <div class="left-play" ng-class="expansionVideo?'expansionVideo':''">
+                        <div class="barrageDom" id="barrageDom" ng-show="opBarrage" ng-click="barrageClickEvent()"></div>
+                        <video id="video" class="video-js vjs-default-skin vjs-big-play-centered video"
+                               controls preload="auto" width="100%" height="100%"
+                               poster="" data-setup='{}'>
+                            <source src="../resources/video/9999/8888/[Saenai_Heroine_no_Sodatekata][00][GB_JP][1080P]【渚鹿汐】.mp4" type='video/mp4' />
+                            <!--<source src="video/video.webm" type='video/webm' />-->
+                            <!--<source src="video/video.ogv" type='video/ogg' />-->
+                            <p class="vjs-no-js"></p>
+                        </video>
+                    </div>
+                    <div class="left-foot" ng-class="expansionVideo?'expansionVideo':''">
+                        <div class="foot-ico">
+                            <div class="foot-ico-click" ng-click="opShowBarrage()">
+                                <a class="foot-ico-a">
+                                    <img src="../style/image/DanMumodel.png">
+                                </a>
+                            </div>
+                            <div class="left-foot-tip">
+                                弹幕模式
+                                <i class="left-foot-tip-i"></i>
+                            </div>
+                            <div class="left-foot-barrage" ng-class="showBarrage?'active':''">
+                                <div class="left-foot-barrage-font">
+                                    <span class="barrage-font-1">字体</span>
+                                    <span class="barrage-font-2" ng-class="barrageObject.barrage_font_size == '0'?'active':''" ng-click="barrageFont('0')">小</span>
+                                    <span class="barrage-font-3" ng-class="barrageObject.barrage_font_size == '1'?'active':''" ng-click="barrageFont('1')">大</span>
+                                </div>
+                                <div class="left-foot-barrage-module">
+                                    <span class="barrage-module">模式</span>
+                                    <div class="barrage-module-item item-1" ng-class="barrageObject.barrage_position == '0'?'active':''" ng-click="barragePosition('0')">
+                                        <img src="../style/image/GunDong-DM.png">
+                                        <p>滚动弹幕<i class="glyphicon glyphicon-ok-sign"></i></p>
+                                    </div>
+                                    <div class="barrage-module-item" ng-class="barrageObject.barrage_position == '1'?'active':''" ng-click="barragePosition('1')">
+                                        <img src="../style/image/top-DM.png">
+                                        <p>顶端弹幕<i class="glyphicon glyphicon-ok-sign"></i></p>
+                                    </div>
+                                    <div class="barrage-module-item" ng-class="barrageObject.barrage_position == '2'?'active':''" ng-click="barragePosition('2')">
+                                        <img src="../style/image/down-DM.png">
+                                        <p>底端弹幕<i class="glyphicon glyphicon-ok-sign"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="foot-ico">
+                            <div class="foot-ico-click foot-ico-color">
+                                <a class="foot-ico-a">
+                                    <img src="../style/image/DanMucolor.png">
+                                </a>
+                            </div>
+                            <div class="left-foot-tip">
+                                彩色弹幕
+                                <i class="left-foot-tip-i"></i>
+                            </div>
+                            <div class="colorpicker">
+                                <canvas id="picker" var="5" width="100" height="100"></canvas>
+                                <div class="controls-right">
+                                    <div><label>R</label> <input type="text" id="rVal" /></div>
+                                    <div><label>G</label> <input type="text" id="gVal" /></div>
+                                    <div><label>B</label> <input type="text" id="bVal" /></div>
+                                </div>
+                                <div class="controls-down">
+                                    <div><label>RGB</label> <input type="text" id="rgbVal" /></div>
+                                    <div><label>HEX</label> <input type="text" id="hexVal" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="foot-ico" ng-click="setBarrage()">
+                            <a class="foot-ico-a">
+                                <img ng-src="{{opBarrage?'../style/image/DanMuclose.png':'../style/image/DanMuclose-close.png'}}" src="">
+                            </a>
+                            <div class="left-foot-tip">
+                                打开弹幕
+                                <i class="left-foot-tip-i"></i>
+                            </div>
+                        </div>
+                        <div class="foot-DanMu" ng-class="expansionVideo?'expansionVideo':''">
+                            <div class="DanMu-sone">
+                                <input ng-model="barrageObject.barrage_text" name="DanMu" type="text" class="DanMu-keyword" id="DanMu-keyword" autocomplete="off" accesskey="s" x-webkit-speech="" x-webkit-grammar="builtin:translate" placeholder="你可以在这里输入弹幕吐槽哦·" data-recommend="ぽんた">
+                            </div>
+                            <div class="DanMu-btn">
+                                <button type="button" class="DanMu-btn-sone" id="DanMu-btn-sone" ng-click="barrageSendOut()">发送 <i class="fa fa-angle-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="module-right" ng-class="expansionVideo?'expansionVideo':''">
+                    <div class="module-right-barrage" ng-class="expansionVideo?'expansionVideo':''">
+                        <div class="right-top">
+                            <p><strong>{{videoInfo.barrageNum}}</strong>条弹幕</p>
+                            <span class="right-top-close" ng-click="setExpansionVideo()">
+                                <i class="glyphicon glyphicon-off"></i>
+                                <div>关闭弹幕</div>
+                            </span>
+                        </div>
+                        <div class="right-meddle">
+                            <div class="right-meddle-hr">
+                                <span><i class="glyphicon glyphicon-list-alt"></i>弹幕列表</span>
+                            </div>
+                            <div class="right-meddle-small-hr">
+                                <span>时间</span>
+                                <span>弹幕内容</span>
+                                <span>发送时间</span>
+                            </div>
+                        </div>
+                        <div class="right-bottom">
+                            <ul class="right-bottom-ul">
+                                <li class="right-bottom-li" ng-repeat="item in barrageList">
+                                    <div class="li-time">{{item.time}}</div>
+                                    <div class="li-content">{{item.text}}</div>
+                                    <div class="li-date">{{item.date}}</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="expansionVideoDiv animated bounceIn" ng-if="expansionVideo" ng-click="setExpansionVideo()">
+                    <i class="glyphicon glyphicon-sort-by-attributes"></i>
+                    <span>弹幕</span>
+                </div>
+            </div>
+        </div>
+        <div class="videoPlay-comment">
+            <div class="comment-inner">
+                <div class="inner-collection-info">
+                    <div class="collection-info-img">
+                        <a>
+                            <img ng-src="{{videoInfo.pictureName}}">
+                        </a>
+                    </div>
+                    <div class="collection-info">
+                        <h3>{{videoInfo.title}}</h3>
+                        <div class="videoScore">
+                            <span ng-click="setShowVideoScore()">评分</span>
+                            <div class="videoScore-in" ng-if="showVideoScore">
+                                <select class="integer" ng-model="integer" ng-options="x.value as x.key for x in integers"></select>
+                                .
+                                <select class="decimal" ng-model="decimal" ng-options="y.value as y.key for y in decimals"></select>
+                                <a class="submitVideoScore" ng-click="submitVideoScore()">提交</a>
+                            </div>
+                        </div>
+                        <div class="collection-info-body">
+                            <div class="collection-info-body-top">
+                                <span>TV</span>
+                            </div>
+                            <div class="collection-info-body-num">
+                                <div class="prev" ng-click="setMoveVideoNum('prev')" ng-if="moveVideoNum.isMove && moveVideoNum.prev"><i class="fa fa-angle-left"></i></div>
+                                <div class="num-par">
+                                    <ul id="moveVideoNumUl">
+                                        <li ng-repeat="item in videoNum track by $index" ng-click="setSelectedIndex($index)" ng-class="moveVideoNum.selectedIndex == $index?'active':''">
+                                            <h5>第{{$index + 1}}话</h5>
+                                            <p>{{item.videoTitle}}</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="next" ng-click="setMoveVideoNum('next')" ng-if="moveVideoNum.isMove && moveVideoNum.next"><i class="fa fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner-comment-info">
+                    <div class="b-head">
+                        <span class="b-head-results">{{allRow}}</span>
+                        <span class="b-head-t">评论</span>
+                    </div>
+                    <div class="comment-send" ng-if="commentVideo.length > 0">
+                        <div class="user-face">
+                            <img class="user-head" src="//static.hdslb.com/images/member/noface.gif">
+                        </div>
+                        <div class="textarea-container">
+                            <textarea ng-model="comment.text" cols="80" name="msg" rows="5" placeholder="请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。" class="ipt-txt"></textarea>
+                        </div>
+                        <button class="comment-submit" ng-click="sendCommentsTop()">发表评论</button>
+                    </div>
+                    <div class="comment-list">
+                        <div class="list-item" ng-repeat="item in commentVideo" ng-init="outIndex = $index">
+                            <div class="user-face">
+                                <a>
+                                    <img ng-src="{{item.headImageSrc}}" alt="">
+                                </a>
+                            </div>
+                            <div class="con">
+                                <p class="user">{{item.replyName}}</p>
+                                <p class="text">{{item.content}}</p>
+                                <div class="info">
+                                    <span class="time">{{item.createTime}}</span>
+                                    <span class="reply" ng-click="toggleGroup(outIndex,item.replyId,item.replyName)">参与回复</span>
+                                </div>
+                                <div class="reply-box">
+                                    <div class="reply-item" ng-repeat="itemChild in commentVideoChild[outIndex]">
+                                        <div class="reply-user-face">
+                                            <a>
+                                                <img ng-src="{{itemChild.headImageSrc}}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="reply-con">
+                                            <span class="reply-user">{{itemChild.replyName}}<span class="text-con" ng-if="itemChild.beReplyId != item.replyId"> 回复 @{{itemChild.beReplyName}}</span></span>
+                                            <p class="reply-text">{{itemChild.content}}</p>
+                                            <div class="reply-info">
+                                                <span class="reply-time">{{itemChild.createTime}}</span>
+                                                <span class="reply-small" ng-click="toggleGroup(outIndex,itemChild.replyId,itemChild.replyName)">回复</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-send" ng-if="isGroupShown(outIndex)">
+                                        <div class="user-face">
+                                            <img class="user-head" src="//static.hdslb.com/images/member/noface.gif">
+                                        </div>
+                                        <div class="textarea-container reply-textarea">
+                                            <textarea ng-model="comment.text" cols="80" name="msg" rows="5" placeholder="请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。" class="ipt-txt"></textarea>
+                                        </div>
+                                        <button class="comment-submit" ng-click="sendCommentsLower(item.commentVideoId)">发表评论</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row foot" ng-if="allRow > 0">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <ul class="pagination">
+                                <!--<li class="pagination-li" ng-repeat="item in PageNum track by $index" ng-class="PageIndex == $index ? 'CurrentActive':''"><a ng-bind="item"></a></li>-->
+                            </ul>
+                        </div>
+                        <div class="page-jump">
+                            共{{TotalPage}}页，跳至<input class="goCurrentPage" type="text" ng-model="goCurrentPage" ng-keyup="myKeyup($event)">页
+                        </div>
+                    </div>
+                    <div class="comment-send">
+                        <div class="user-face">
+                            <img class="user-head" src="//static.hdslb.com/images/member/noface.gif">
+                        </div>
+                        <div class="textarea-container">
+                            <textarea ng-model="comment.text" cols="80" name="msg" rows="5" placeholder="请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。" class="ipt-txt"></textarea>
+                        </div>
+                        <button class="comment-submit" ng-click="sendCommentsTop()">发表评论</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

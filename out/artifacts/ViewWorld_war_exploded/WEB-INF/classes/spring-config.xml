@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                        http://www.springframework.org/schema/beans/spring-beans.xsd
+	                        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+	                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--引入外部的属性文件-->
+    <context:property-placeholder location="classpath:globalText.properties"/>
+
+    <!-- 定义数据源的信息 proxool比较稳定-->
+    <bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+        <property name="driver">
+            <value>${jdbc.driverClass}</value>
+        </property>
+        <property name="driverUrl">
+            <value>${jdbc.url}</value>
+        </property>
+        <property name="user" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <!--<property name="prototypeCount" value="4" />-->
+        <property name="maximumConnectionCount" value="${jdbc.maximumConnectionCount}" />
+        <property name="minimumConnectionCount" value="${jdbc.minimumConnectionCount}" />
+        <property name="maximumActiveTime" value="${jdbc.maximumActiveTime}" />
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <!--注入连接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--映射到hibernate.cfg.xml配置文件-->
+        <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
+        <!--当有多个的时候，可以用扫描包的方法-->
+        <property name="packagesToScan">
+            <list>
+                <value>com.beans</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.connection.url">jdbc:mysql://119.29.165.93:3306/ViewWorld?characterEncoding=UTF-8</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- 配置事务管理器（声明式的事务） -->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <!-- 2.配置事务属性，需要事务管理器 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="purchase" propagation="REQUIRES_NEW"/>
+            <tx:method name="*" />
+        </tx:attributes>
+    </tx:advice>
+    <!-- 3.配置事务切点，并把切点和事务属性关联起来 -->
+    <aop:config>
+        <aop:pointcut expression="execution(* com.service.*.*(..))"
+                      id="txPointCut"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
+    </aop:config>
+
+
+
+    <!--配置Dao-->
+    <bean id="userDao" class="com.daoImpl.UserDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="websiteSugDao" class="com.daoImpl.WebsiteSugDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="suggestionBoxDao" class="com.daoImpl.SuggestionBoxDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="userConcernDao" class="com.daoImpl.UserConcernDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="albumDao" class="com.daoImpl.AlbumDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="memberDao" class="com.daoImpl.MemberDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="videoDao" class="com.daoImpl.VideoDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <!--配置Service -->
+    <bean id="sessionServiceImpl" class="com.serviceImpl.SessionServiceImpl">
+
+    </bean>
+    <bean id="userServiceImpl" class="com.serviceImpl.UserServiceImpl">
+        <property name="userDao" ref="userDao" />
+    </bean>
+    <bean id="websiteSugServiceImpl" class="com.serviceImpl.WebsiteSugServiceImpl">
+        <property name="websiteSugDao" ref="websiteSugDao" />
+    </bean>
+    <bean id="suggestionBoxServiceImpl" class="com.serviceImpl.SuggestionBoxServiceImpl">
+        <property name="suggestionBoxDao" ref="suggestionBoxDao" />
+    </bean>
+    <bean id="userConcernServiceImpl" class="com.serviceImpl.UserConcernServiceImpl">
+        <property name="userConcernDao" ref="userConcernDao" />
+    </bean>
+    <bean id="albumServiceImpl" class="com.serviceImpl.AlbumServiceImpl">
+        <property name="albumDao" ref="albumDao" />
+        <property name="memberDao" ref="memberDao" />
+    </bean>
+    <bean id="videoServiceImpl" class="com.serviceImpl.VideoServiceImpl">
+        <property name="videoDao" ref="videoDao" />
+        <property name="memberDao" ref="memberDao" />
+    </bean>
+    <bean id="barrageServiceImpl" class="com.serviceImpl.BarrageServiceImpl">
+
+    </bean>
+
+    <!-- 配置Action -->
+    <bean id="userAction" class="com.action.UserAction" scope="prototype">
+        <property name="userService" ref="userServiceImpl"/>
+        <property name="userConcernService" ref="userConcernServiceImpl"/>
+        <property name="sessionService" ref="sessionServiceImpl"/>
+    </bean>
+    <bean id="uploadImageAction" class="com.action.UploadImageAction" scope="prototype">
+        <property name="sessionService" ref="sessionServiceImpl"/>
+    </bean>
+    <bean id="uploadVideoAction" class="com.action.UploadVideoAction" scope="prototype">
+        <property name="sessionService" ref="sessionServiceImpl"/>
+        <property name="barrageService" ref="barrageServiceImpl"/>
+    </bean>
+    <bean id="websiteSugAction" class="com.action.WebsiteSugAction" scope="prototype">
+        <property name="websiteSugService" ref="websiteSugServiceImpl"/>
+    </bean>
+    <bean id="suggestionBoxAction" class="com.action.SuggestionBoxAction" scope="prototype">
+        <property name="suggestionBoxService" ref="suggestionBoxServiceImpl"/>
+        <property name="sessionService" ref="sessionServiceImpl"/>
+    </bean>
+    <bean id="userConcernAction" class="com.action.UserConcernAction" scope="prototype">
+        <property name="userConcernService" ref="userConcernServiceImpl"/>
+        <property name="sessionService" ref="sessionServiceImpl"/>
+        <property name="userService" ref="userServiceImpl"/>
+    </bean>
+    <bean id="albumAction" class="com.action.AlbumAction" scope="prototype">
+        <property name="albumService" ref="albumServiceImpl"/>
+        <property name="userService" ref="userServiceImpl"/>
+        <property name="sessionService" ref="sessionServiceImpl"/>
+    </bean>
+    <bean id="videoAction" class="com.action.VideoAction" scope="prototype">
+        <property name="videoService" ref="videoServiceImpl"/>
+        <property name="userService" ref="userServiceImpl"/>
+        <property name="sessionService" ref="sessionServiceImpl"/>
+    </bean>
+    <bean id="barrageAction" class="com.action.BarrageAction" scope="prototype">
+        <property name="videoService" ref="videoServiceImpl"/>
+        <property name="barrageService" ref="barrageServiceImpl"/>
+    </bean>
+</beans>

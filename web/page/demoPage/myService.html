@@ -1,0 +1,89 @@
+<div class="Custom">
+    <div class="container">
+        <div class="row Custom-body">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="nav-content">
+                    <div class="nav-header"></div>
+                    <div class="nav-body">
+                        <div class="accordion">
+                            <div class="group">
+                                <h4 class="header-btn">
+                                    <i class="fa fa-home fa-fw fa-lg"></i>
+                                    我的服务
+                                    <i class="fa fa-plus plus-rotate"></i>
+                                </h4>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a ng-click="WebProblem()">
+                                                网站问题
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a ng-click="VideoPictureProblem()">
+                                                视频/图片问题
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a ng-click="WebProposal()">
+                                                账户问题/投诉建议
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a ng-click="WebOther()">
+                                                其它
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <div class="Custom-right">
+                    <div class="nav-top">
+                        <ol class="breadcrumb">
+                            <li><a>客服</a></li>
+                            <li class="active">我的服务</li>
+                        </ol>
+                    </div>
+                    <div class="Custom-right-content">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="NoFindService" ng-if="showSugList">
+                                <p>没有相关数据</p>
+                                <img src="../style/image/NoFind.png">
+                            </div>
+                            <div class="Service-body" ng-if="sugList.length > 0">
+                                <ul class="media-list" onload="">
+                                    <li class="media  animated fadeIn" ng-repeat="sug in sugList">
+                                        <a class="media-left" href="#">
+                                            <img alt="80x85" ng-src="{{user.headImageSrc}}" data-holder-rendered="true" style="width: 80px; height: 85px;">
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">{{sug.title}}</h4>
+                                            <p class="media-text userText">{{sug.sugContent}}</p>
+                                            <p><span class="time">{{sug.createTime}}</span></p>
+                                            <div class="media Already-reply" ng-if="sug.csId != null">
+                                                <a class="media-left">
+                                                    <img alt="72x75" src="../style/image/imageFocus/3a.jpg" data-holder-rendered="true" style="width: 72px; height: 75px;">
+                                                </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">尊敬的用户您好</h4>
+                                                    <p class="media-text customText">{{sug.csContent}}</p>
+                                                    <p class="csInfo"><strong>{{sug.csName}} 客服</strong><span class="time">{{sug.csTime}}</span></p>
+                                                </div>
+                                            </div>
+                                            <p class="No-reply" ng-if="sug.csId == null"><strong>请耐心静候客服的回复:</strong></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

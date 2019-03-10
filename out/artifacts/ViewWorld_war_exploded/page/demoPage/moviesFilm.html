@@ -1,0 +1,86 @@
+<div class="Film movies-skins">
+    <div class="nav-focus">
+        <div id="moviesFilmFocus"><!--焦点图盒子-->
+            <div class="loading"><img src="../style/image/imageFocus/loading1.gif" alt="请稍候..." /></div><!--载入画面(可删除)-->
+            <div class="pic"><!--内容列表(li数目可随意增减)-->
+                <ul class="imageFocus">
+                    <li><a href="#"><img src="../style/image/imageFocus/1a.jpg" thumb="" alt="速度与激情" text="详细描述1" /></a></li>
+                    <li><a href="#"><img src="../style/image/imageFocus/5a.jpg" thumb="" alt="美女与野兽" text="详细描述2" /></a></li>
+                    <li><a href="#"><img src="../style/image/imageFocus/chenglong.jpg" thumb="" alt="功夫瑜伽" text="详细描述3" /></a></li>
+                    <li><a href="#"><img src="../style/image/imageFocus/垫底辣妹.jpg" thumb="" alt="垫底辣妹" text="详细描述4" /></a></li>
+                    <li><a href="#"><img src="../style/image/imageFocus/魔兽.jpg" thumb="" alt="魔兽" text="详细描述5" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="middle-hot">
+        <div class="type-title">
+            <h3>最热</h3>
+        </div>
+        <div class="row hot-body">
+            <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="item in hotTvList">
+                <div class="hot-content">
+                    <div class="hot-img" ng-click="goToVideoPlay(item.videoId,0)">
+                        <img ng-src="{{item.pictureName}}">
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="hot-info">
+                        <p>{{item.title}}</p>
+                        <span>{{item.videoIntroduction}}</span>
+                        <i>{{item.score}}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="nav-local">
+        <span>电影频道</span>
+        <ul>
+            <li ng-click="toggleGroup('')" ng-class="{active: isGroupShown('')}">所有</li>
+            <li ng-click="toggleGroup('大陆')" ng-class="{active: isGroupShown('大陆')}">大陆</li>
+            <li ng-click="toggleGroup('香港')" ng-class="{active: isGroupShown('香港')}">香港</li>
+            <li ng-click="toggleGroup('台湾')" ng-class="{active: isGroupShown('台湾')}">台湾</li>
+            <li ng-click="toggleGroup('韩国')" ng-class="{active: isGroupShown('韩国')}">韩国</li>
+            <li ng-click="toggleGroup('美国')" ng-class="{active: isGroupShown('美国')}">美国</li>
+            <li ng-click="toggleGroup('日本')" ng-class="{active: isGroupShown('日本')}">日本</li>
+            <li ng-click="toggleGroup('英国')" ng-class="{active: isGroupShown('英国')}">英国</li>
+            <li ng-click="toggleGroup('泰国')" ng-class="{active: isGroupShown('泰国')}">泰国</li>
+            <li class="clearfix"></li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="movies-content">
+        <div class="type-title">
+            <h3>精彩剧</h3>
+        </div>
+        <div class="row content-body">
+            <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="item in videoPackageForms">
+                <div class="body-content">
+                    <div class="body-img" ng-click="goToVideoPlay(item.videoId,0)">
+                        <img ng-src="{{item.pictureName}}">
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="body-info">
+                        <p>{{item.title}}</p>
+                        <span>{{item.videoIntroduction}}</span>
+                        <i>{{item.score}}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="row foot">
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+            <ul class="pagination">
+                <li class="pagination-li" ng-repeat="item in PageNum track by $index" ng-class="PageIndex == $index ? 'CurrentActive':''"><a ng-bind="item"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

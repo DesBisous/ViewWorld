@@ -1,0 +1,29 @@
+<div class="userOp">
+    <div class="container">
+        <div class="row">
+            <div class="form-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group groupBorder">
+                        <label for="Pw" class="col-sm-2 control-label"><i class="fa fa-unlock-alt fa-2x faPw"></i></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control inputUser" id="Pw" placeholder="密码" ng-model="userInfo.password" ng-focus="focusEvent(1)">
+                            <a tabindex="0" class="popoverStyle modifyPassword-1" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-original-title="" data-content="{{popoverInfo.content}}"></a>
+                        </div>
+                    </div>
+                    <div class="form-group groupBorder">
+                        <label for="passwordConfirmation" class="col-sm-2 control-label"><i class="fa fa-unlock-alt fa-2x faPw"></i></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control inputUser" id="passwordConfirmation" placeholder="确认密码" ng-model="userInfo.passwordConfirmation" ng-focus="focusEvent(2)">
+                            <a tabindex="0" class="popoverStyle modifyPassword-2" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-original-title="" data-content="{{popoverInfo.content}}"></a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn submitBtn" ng-click="modifyPasswordEvent()">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

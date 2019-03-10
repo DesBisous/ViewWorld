@@ -1,0 +1,175 @@
+<div class="uploadVideo">
+    <div class="container">
+        <div class="body">
+            <div class="row">
+                <div class="col-md-3 left">
+                    <div class="video-Img" ng-if="videoImgInfo.previewImgSrc.length <= 0" ng-click="opImageUploadInput()">
+                        <div class="center">
+                            <i></i>
+                            <span>上传封面</span>
+                        </div>
+                        <div class="video-cover"></div>
+                    </div>
+                    <div class="video-Img" ng-if="videoImgInfo.previewImgSrc.length > 0" ng-click="opImageUploadInput()">
+                        <img ng-src="{{videoImgInfo.previewImgSrc}}">
+                        <div class="cover" ng-style="videoImgInfo.progressStyObj"><span>{{videoImgInfo.progress|parseIntFilter}}%</span></div>
+                    </div>
+                    <input type="file" id="videoImage"  nv-file-select uploader="videoImgInfo.uploaderImg" accept="image/gif,image/jpeg,image/png,image/jpg">
+                    <div class="video-imgTip">
+                        <ul>
+                            <li><span>建议上传高清封面≥960*600</span></li>
+                            <li><span>若没有上传图片，将自动截取影片画面或使用默认封面</span></li>
+                        </ul>
+                        <i class="imgTip-horn"></i>
+                    </div>
+                </div>
+                <div class="col-md-9 right">
+                    <div class="row">
+                        <div class="col-md-12 addingVideo-12" ng-repeat="video in videoArrInfo track by $index">
+                            <a class="addingVideoImg">
+                                <img src="../style/image/Temporary video.png">
+                                <span>{{$index}}</span>
+                            </a>
+                            <div class="meta-wrp">
+                                <div class="status-wrp">
+                                    <span class="name-wrp">{{video.name}}</span>
+                                    <span class="upload-status">{{video.starUpload|starUploadFilter}}</span>
+                                    <span class="upload-status">已完成</span>
+                                    <span class="upload-status highlight">{{video.progress|parseIntFilter}}%</span>
+                                    <div class="right-act-wrp" ng-click="deleteVideo($index)">
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </div>
+                                </div>
+                                <div class="progress-wrp">
+                                    <div class="progress" style="width: 0%;" ng-style="video.progressStyObj"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" ng-click="opVideoUploadInput()">
+                            <div class="addVideo">
+                                <i class="fa fa-plus"></i>
+                            </div>
+                        </div>
+                        <input type="file" id="videoData" multiple nv-file-select uploader="uploaderVideo" accept="audio/mp4,video/mp4">
+                    </div>
+                    <div class="row region">
+                        <div class="col-md-12">
+                            <p>地区</p>
+                            <ul class="video-float-ul">
+                                <li ng-class="videoInfo.region == '大陆'?'active':''" ng-click="setRegion('大陆')"><a>大陆</a></li>
+                                <li ng-class="videoInfo.region == '香港'?'active':''" ng-click="setRegion('香港')"><a>香港</a></li>
+                                <li ng-class="videoInfo.region == '台湾'?'active':''" ng-click="setRegion('台湾')"><a>台湾</a></li>
+                                <li ng-class="videoInfo.region == '韩国'?'active':''" ng-click="setRegion('韩国')"><a>韩国</a></li>
+                                <li ng-class="videoInfo.region == '美国'?'active':''" ng-click="setRegion('美国')"><a>美国</a></li>
+                                <li ng-class="videoInfo.region == '日本'?'active':''" ng-click="setRegion('日本')"><a>日本</a></li>
+                                <li ng-class="videoInfo.region == '英国'?'active':''" ng-click="setRegion('英国')"><a>英国</a></li>
+                                <li ng-class="videoInfo.region == '泰国'?'active':''" ng-click="setRegion('泰国')"><a>泰国</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row partition">
+                        <div class="col-md-12">
+                            <p>选择分区</p>
+                            <ul class="video-float-ul">
+                                <li ng-class="videoInfo.theme == '电视剧'?'active':''" ng-click="setTheme('电视剧')"><a>电视剧</a></li>
+                                <li ng-class="videoInfo.theme == '电影'?'active':''" ng-click="setTheme('电影')"><a>电影</a></li>
+                                <li ng-class="videoInfo.theme == '综艺'?'active':''" ng-click="setTheme('综艺')"><a>综艺</a></li>
+                                <li ng-class="videoInfo.theme == '动漫'?'active':''" ng-click="setTheme('动漫')"><a>动漫</a></li>
+                                <li ng-class="videoInfo.theme == '音乐'?'active':''" ng-click="setTheme('音乐')"><a>音乐</a></li>
+                                <li ng-class="videoInfo.theme == '舞蹈'?'active':''" ng-click="setTheme('舞蹈')"><a>舞蹈</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row video-title">
+                        <div class="col-md-11">
+                            <p>稿件标题</p>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入稿件标题(80字内)" ng-focus="focusEvent()" ng-model="videoInfo.title">
+                                <span>{{videoInfo.title.length}}/80</span>
+                            </div>
+                            <span class="warning" ng-if="videoInfo.title.length > 80 || videoInfo.title.length <= 0"><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>超出了字数限制或者为空</span>
+                        </div>
+                    </div>
+                    <div class="row video-title">
+                        <div class="col-md-11">
+                            <p>稿件标签</p>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入稿件标签(10字内)" ng-focus="focusEvent()" ng-model="videoInfo.label">
+                                <span>{{videoInfo.label.length}}/10</span>
+                            </div>
+                            <span class="warning" ng-if="videoInfo.label.length > 10 || videoInfo.label.length <= 0"><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>超出了字数限制或者为空</span>
+                        </div>
+                    </div>
+                    <div class="row video-title">
+                        <div class="col-md-11">
+                            <p>稿件简介</p>
+                            <div class="form-group">
+                                <textarea placeholder="请您写上关于该视频的相关信息，如剧情简介等之类的(250字内)" ng-focus="focusEvent()" ng-model="videoInfo.introduction"></textarea>
+                                <span>{{videoInfo.introduction.length}}/800</span>
+                            </div>
+                            <span class="warning" ng-if="videoInfo.introduction.length > 800 || videoInfo.introduction.length <= 0"><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>超出了字数限制或者为空</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-wrp">
+                    <div class="col-md-12">
+                        <button ng-click="submitWrp()">提交稿件</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row video-sug">
+            <div class="col-md-12">
+                <p><a>对新版投稿有任何建议请邮件反馈到919624732@qq.com</a></p>
+            </div>
+        </div>
+        <div class="row video-box">
+            <div class="col-md-12">
+                <div class="left box-wrp help-wrp">
+                    <h3 class="title">帮助及说明</h3>
+                    <ul class="help-menu">
+                        <li>
+                            <span class="dot"></span>
+                            <span>上传视频，即表示您已同意<a> ViewWorld使用协议</a>，请勿上传色情，反动等违法视频。</span>
+                        </li>
+                        <li>
+                            <span class="dot"></span>
+                            <span>请保持上传的视频文件大小在2G以内</span>
+                        </li>
+                        <li>
+                            <span class="dot"></span>
+                            <span>请保持视频码率不超过1800kbps，音频码率不超过192kbps，否则会被系统再次压制</span>
+                        </li>
+                    </ul>
+                    <ul class="qa-list clearfix">
+                        <li>
+                            <a ui-sref="main.aboutWeb" target="_blank" class="left qa-link qa-faq">
+                                <i class="fa fa-question-circle-o fa-fw" aria-hidden="true"></i>
+                                <span>常见问题</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="left box-wrp client-wrp">
+                    <h3 class="title">工具下载</h3>
+                    <div class="tool-row">
+                        <h3>投稿工具</h3>
+                        <a data-upload-tool="" class="tool-btn office" target="_blank" href="http://dl.hdslb.com/winclient/uploader/1.2.2.4/bilibiliuploader1.2.2.4.exe">
+                            <i class="icon-new">new</i>
+                            <i class="fa fa-wrench fa-fw" aria-hidden="true"></i>
+                            投稿工具 1.2.2
+                        </a>
+                    </div>
+                    <div class="tool-row">
+                        <h3>压制工具</h3>
+                        <a data-xiaowan="" class="tool-btn original" target="_blank" href="http://dl.hdslb.com/video-press/xiaowantoolsrev194.zip">
+                            <i class="fa fa-arrow-circle-o-down fa-fw" aria-hidden="true"></i>
+                            小丸版原版
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="white-cover"></div>
+</div>

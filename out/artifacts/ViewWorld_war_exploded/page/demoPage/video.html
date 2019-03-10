@@ -1,0 +1,39 @@
+<div class="container video videoAlbum">
+    <div class="row video-top">
+        <div class="col-md-12 col-sm-12">
+            <strong>专辑</strong>
+            <div class="video-top-right">
+                <span class="active">
+                    最新发布
+                    <i class="horn"></i>
+                </span>
+                <span>
+                    最多发布
+                    <i class="horn"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row video-body">
+        <div class="col-md-2 col-sm-3 col-xs-4" ng-repeat="video in videoPackageForms">
+            <a class="body-top" ng-click="goToVideoPlay($index)">
+                <div class="imgBody"ng-click="goToVideoPlay(video.videoId,0)">
+                    <img ng-src="{{video.pictureName}}">
+                </div>
+                <p>{{video.title}}</p>
+            </a>
+            <div class="body-bottom">
+                <span><i class="fa fa-caret-square-o-right fa-fw" aria-hidden="true"></i>{{video.playNum}}</span>
+                <span><i class="fa fa-history fa-fw" aria-hidden="true"></i>{{video.createTime}}</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row foot" ng-if="allRow > 0">
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+            <ul class="pagination">
+                <!--<li class="pagination-li" ng-repeat="item in PageNum track by $index" ng-class="PageIndex == $index ? 'CurrentActive':''"><a ng-bind="item"></a></li>-->
+            </ul>
+        </div>
+    </div>
+</div>

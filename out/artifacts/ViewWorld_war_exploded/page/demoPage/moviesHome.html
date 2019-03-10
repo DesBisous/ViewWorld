@@ -1,0 +1,490 @@
+<div class="movies-home">
+    <div class="movies-1 movies-type">
+        <div class="type-title">
+            <h3>本月焦点</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-5 col-xs-5 movies-1-left">
+                <div id="moviesHomeFocus"><!--焦点图盒子-->
+                    <div class="loading"><img src="../style/image/imageFocus/loading.gif" alt="请稍候..." /></div><!--载入画面(可删除)-->
+                    <div class="pic"><!--内容列表(li数目可随意增减)-->
+                        <ul class="imageFocus">
+                            <li><a href="#"><img src="../style/image/imageFocus/1a.jpg" thumb="" alt="标题1" text="详细描述1" /></a></li>
+                            <li><a href="#"><img src="../style/image/imageFocus/2a.jpg" thumb="" alt="标题2" text="详细描述2" /></a></li>
+                            <li><a href="#"><img src="../style/image/imageFocus/3a.jpg" thumb="" alt="标题3" text="详细描述3" /></a></li>
+                            <li><a href="#"><img src="../style/image/imageFocus/4a.jpg" thumb="" alt="标题4" text="详细描述4" /></a></li>
+                            <li><a href="#"><img src="../style/image/imageFocus/5a.jpg" thumb="" alt="标题5" text="详细描述5" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-7 movies-1-right">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="item in moviesTypeData.hot" >
+                        <div class="movies-content content-updata" ng-click="goToVideoPlay(item.videoId,0)">
+                            <img ng-src="{{item.pictureName}}">
+                            <div class="movies-info-down">
+                                <p class="movies-info">{{item.title}}</p>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="covering-layer">
+                                <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                                <p>Up主：{{item.userName}}</p>
+                                <p>Good：{{item.score}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="movies-TvPlay movies-type">
+        <div class="type-title">
+            <h3>电视剧</h3>
+            <!--<span class="goToMove" ng-click="goToMove('电视剧')">move</span>-->
+        </div>
+        <div class="row tvPlay-body">
+            <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="item in moviesTypeData.tvPlay">
+                <div class="tvPlay-content">
+                    <div class="tyPlay-img" ng-click="goToVideoPlay(item.videoId,0)">
+                        <img ng-src="{{item.pictureName}}">
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="tyPlay-info">
+                        <p>{{item.title}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="movies-Film movies-type">
+        <div class="type-title">
+            <h3>电影</h3>
+        </div>
+        <div class="row Film-body">
+            <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="item in moviesTypeData.film">
+                <div class="Film-content">
+                    <div class="Film-img" ng-click="goToVideoPlay(item.videoId,0)">
+                        <img ng-src="{{item.pictureName}}">
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Film-info">
+                        <p>{{item.title}}</p>
+                        <span>{{item.videoIntroduction}}</span>
+                        <i>{{item.score}}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="movies-Variety movies-type">
+        <div class="type-title">
+            <h3>综艺</h3>
+        </div>
+        <div class="row Variety-body">
+            <div class="col-md-5 col-sm-5 col-xs-5" ng-repeat="item in moviesTypeData.variety" ng-if="$index == 0">
+                <div class="Variety-content">
+                    <div class="Variety-img" ng-click="goToVideoPlay(item.videoId,0)">
+                        <img ng-src="{{item.pictureName}}">
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Variety-info">
+                        <p>{{item.title}}</p>
+                        <span>{{item.videoIntroduction}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-7">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="item in moviesTypeData.variety" ng-if="$index > 0 ">
+                        <div class="Variety-content">
+                            <div class="Variety-img" ng-click="goToVideoPlay(item.videoId,0)">
+                                <img ng-src="{{item.pictureName}}">
+                                <div class="covering-layer">
+                                    <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                                </div>
+                            </div>
+                            <div class="Variety-info">
+                                <p>{{item.title}}</p>
+                                <span>{{item.videoIntroduction}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="movies-Animation movies-type">
+        <div class="type-title">
+            <h3>动漫</h3>
+        </div>
+        <div class="row Animation-body">
+            <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="item in moviesTypeData.animation">
+                <div class="Animation-content">
+                    <div class="Animation-img" ng-click="goToVideoPlay(item.videoId,0)">
+                        <img ng-src="{{item.pictureName}}">
+                        <div class="img-ico">
+                            <i class="glyphicon glyphicon-heart"></i>
+                            <span>{{item.score}}</span>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Animation-info">
+                        <p>{{item.title}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="movies-Music movies-type">
+        <div class="type-title">
+            <h3>音乐</h3>
+        </div>
+        <div class="row Music-body">
+            <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="item in moviesTypeData.music">
+                <div class="Music-content">
+                    <div class="Music-img" ng-click="goToVideoPlay(item.videoId,0)">
+                        <img ng-src="{{item.pictureName}}">
+                        <div class="strip-ico animated">
+                            <p>{{item.region}}</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Music-info">
+                        <p>{{item.title}}</p>
+                        <i>{{item.score}}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="movies-Dance movies-type">
+        <div class="type-title">
+            <h3>舞蹈</h3>
+        </div>
+        <div class="row Dance-body">
+            <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="item in moviesTypeData.dance">
+                <div class="Dance-content">
+                    <div class="Dance-info" ng-click="goToVideoPlay(item.videoId,0)">
+                        <p>{{item.title}}</p>
+                        <i>{{item.score}}</i>
+                    </div>
+                    <div class="Dance-img">
+                        <img ng-src="{{item.pictureName}}">
+                        <div class="strip-ico animated">
+                            <p>{{item.region}}</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--<div class="movies-Fashion movies-type">
+        <div class="type-title">
+            <h3>时尚</h3>
+        </div>
+        <div class="row Fashion-body">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Fashion-content">
+                    <div class="Fashion-img">
+                        <img src="../style/image/imageFocus/AOA.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>AOA</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Fashion-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Fashion-content">
+                    <div class="Fashion-img">
+                        <img src="../style/image/imageFocus/Infinite.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>Infinite</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Fashion-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Fashion-content">
+                    <div class="Fashion-img">
+                        <img src="../style/image/imageFocus/Apink.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>Apink</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Fashion-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Fashion-content">
+                    <div class="Fashion-img">
+                        <img src="../style/image/imageFocus/少女时代.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>少女时代</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Fashion-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Fashion-content">
+                    <div class="Fashion-img">
+                        <img src="../style/image/imageFocus/2PM.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>2PM</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Fashion-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Fashion-content">
+                    <div class="Fashion-img">
+                        <img src="../style/image/imageFocus/GrilDay.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>GrilDay</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Fashion-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Fashion-content">
+                    <div class="Fashion-img">
+                        <img src="../style/image/imageFocus/minusA.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>minusA</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Fashion-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Fashion-content">
+                    <div class="Fashion-img">
+                        <img src="../style/image/imageFocus/Bigbang.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>Bigbang</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Fashion-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>-->
+    <!--<div class="movies-Live movies-type">
+        <div class="type-title">
+            <h3>生活</h3>
+        </div>
+        <div class="row Live-body">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Live-content">
+                    <div class="Live-img">
+                        <img src="../style/image/imageFocus/AOA.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>AOA</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Live-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Live-content">
+                    <div class="Live-img">
+                        <img src="../style/image/imageFocus/Infinite.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>Infinite</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Live-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Live-content">
+                    <div class="Live-img">
+                        <img src="../style/image/imageFocus/Apink.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>Apink</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Live-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Live-content">
+                    <div class="Live-img">
+                        <img src="../style/image/imageFocus/少女时代.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>少女时代</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Live-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Live-content">
+                    <div class="Live-img">
+                        <img src="../style/image/imageFocus/2PM.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>2PM</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Live-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Live-content">
+                    <div class="Live-img">
+                        <img src="../style/image/imageFocus/GrilDay.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>GrilDay</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Live-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Live-content">
+                    <div class="Live-img">
+                        <img src="../style/image/imageFocus/minusA.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>minusA</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Live-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="Live-content">
+                    <div class="Live-img">
+                        <img src="../style/image/imageFocus/Bigbang.jpg">
+                        <div class="strip-ico2 animated">
+                            <p>Bigbang</p>
+                        </div>
+                        <div class="covering-layer">
+                            <h3><i class="glyphicon glyphicon-play-circle"></i></h3>
+                        </div>
+                    </div>
+                    <div class="Live-info">
+                        <p>狐仙的恋爱入门</p>
+                        <i>9.8</i>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>-->
+</div>

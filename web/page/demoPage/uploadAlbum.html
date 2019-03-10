@@ -1,0 +1,125 @@
+<div class="uploadAlbum">
+    <div class="container">
+        <div class="body">
+            <div class="row">
+                <div class="col-md-3 left">
+                    <div class="album-imgTip">
+                        <ul>
+                            <li><span>建议上传图片规格1280*768</span></li>
+                            <li><span>图片可支持批量选择上传和单选上传</span></li>
+                        </ul>
+                        <i class="imgTip-horn"></i>
+                    </div>
+                </div>
+                <div class="col-md-9 right">
+                    <div class="row" nv-file-drop uploader="uploader" accept="image/gif,image/jpeg,image/png,image/jpg">
+                        <!--<div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                {{addAlbumType == 0 ? '批量上传':'单选上传'}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu animated fadeIn" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation" ng-click="changeAlbumType()"><a role="menuitem" tabindex="-1" href="">{{addAlbumType == 1 ? '批量上传':'单选上传'}}</a></li>
+                            </ul>
+                        </div>-->
+                        <div class="col-md-3" ng-repeat="ImgSrc in previewImgSrc track by $index" ng-if="previewImgSrc.length > 0">
+                            <a class="addAlbum">
+                                <div class="addAlbumBatch">
+                                    <img ng-src="{{ImgSrc}}">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a class="addAlbum" ng-click="opImageUploadInput()">
+                                <div class="addAlbumBatch">
+                                    <i class="fa fa-plus fa-2x"></i>
+                                </div>
+                            </a>
+                            <input type="file" id="albumImage" multiple  nv-file-select uploader="uploader" accept="image/gif,image/jpeg,image/png,image/jpg" ng-focus="focusEvent()">
+                        </div>
+                    </div>
+                    <div class="row partition">
+                        <div class="col-md-12">
+                            <p>选择类别</p>
+                            <ul class="video-float-ul">
+                                <li ng-class="albumInfo.type == '节日'?'active':''" ng-click="setAlbumInfoType('节日')"><a>节日</a></li>
+                                <li ng-class="albumInfo.type == '美食'?'active':''" ng-click="setAlbumInfoType('美食')"><a>美食</a></li>
+                                <li ng-class="albumInfo.type == '时尚'?'active':''" ng-click="setAlbumInfoType('时尚')"><a>时尚</a></li>
+                                <li ng-class="albumInfo.type == '户外'?'active':''" ng-click="setAlbumInfoType('户外')"><a>户外</a></li>
+                                <li ng-class="albumInfo.type == '生活'?'active':''" ng-click="setAlbumInfoType('生活')"><a>生活</a></li>
+                                <li ng-class="albumInfo.type == '其他'?'active':''" ng-click="setAlbumInfoType('其他')"><a>其他</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row album-title">
+                        <div class="col-md-11">
+                            <p>相册标题</p>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入相册标题(80字内，必填)" data-verify="[1, 80]" autocomplete="off" maxlength="80" ng-model="albumInfo.title" ng-focus="focusEvent()">
+                                <span>{{albumInfo.title.length}}/80</span>
+                            </div>
+                            <span class="warning" ng-if="albumInfo.title.length > 80 || albumInfo.title.length <= 0"><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>超出了字数限制或者为空</span>
+                        </div>
+                    </div>
+                    <div class="row album-title">
+                        <div class="col-md-11">
+                            <p>相册简介</p>
+                            <div class="form-group">
+                                <textarea placeholder="请您写上关于该相册的相关信息，如相册来源简介等之类的(800字内，必填)" data-verify="[1, 800]" autocomplete="off" maxlength="800" ng-model="albumInfo.introduce" ng-focus="focusEvent()"></textarea>
+                                <span class="textareaWarning">{{albumInfo.introduce.length}}/800</span>
+                            </div>
+                            <span class="warning" ng-if="albumInfo.introduce.length > 800 || albumInfo.introduce.length <= 0"><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>超出了字数限制或者为空</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-wrp">
+                    <div class="col-md-12">
+                        <button ng-click="submitWrp()">提交稿件</button>
+                        <div class="progress-content col-md-10 col-md-offset-1 animated fadeIn" ng-if="progressShow">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info progress-bar-striped active " role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: 0%;" ng-style="progressStyObj">
+                                    上传中... {{progress|parseIntFilter}}%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row album-sug">
+            <div class="col-md-12">
+                <p><a>对新版投稿有任何建议请邮件反馈到919624732@qq.com</a></p>
+            </div>
+        </div>
+        <div class="row album-box">
+            <div class="col-md-12">
+                <div class="left box-wrp help-wrp">
+                    <h3 class="title">帮助及说明</h3>
+                    <ul class="help-menu">
+                        <li>
+                            <span class="dot"></span>
+                            <span>上传视频，即表示您已同意<a> ViewWorld使用协议</a>，请勿上传色情，反动等违法图片。</span>
+                        </li>
+                        <li>
+                            <span class="dot"></span>
+                            <span>请保持上传的每张图片文件大小在5M以内</span>
+                        </li>
+                        <li>
+                            <span class="dot"></span>
+                            <span>请保持图片分辨率不超过1920×1080，否则会被系统再次压制</span>
+                        </li>
+                    </ul>
+                    <ul class="qa-list clearfix">
+                        <li>
+                            <a ui-sref="main.aboutWeb" target="_blank" class="left qa-link qa-faq">
+                                <i class="fa fa-question-circle-o fa-fw" aria-hidden="true"></i>
+                                <span>常见问题</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="white-cover"></div>
+</div>

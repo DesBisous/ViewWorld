@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="js/angular.js"></script>-->
+    <script  src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script type="text/javascript" src="../resources/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="../js/extendlibs/md5.js"></script>
+    <script type="text/javascript" src="../js/extendlibs/Base64.js"></script>
+</head>
+<body ng-app="app" ng-controller="test">
+<form >
+    用户名：<input name="username" ng-model="username"/><br/>
+    密码：<input name="pwd" ng-model="pwd"/><br/><br/>
+    <input id="btn" type="button" value=" 提 交 " ng-click="myPost()"/>
+    您输入了{{username}}
+</form>
+<form >
+    电话号码：<input name="phone" ng-model="phone"/><br/>
+    <input type="button" value=" 提 交 " ng-click="myPhonePost()"/>
+    您输入了{{phone}}
+</form>
+<!--<textarea name="financial.bz"></textarea>-->
+<script type="text/javascript">
+    CKEDITOR.replace('financial.bz',
+            {
+                toolbar : 'Basic',
+                uiColor : '#9AB8F3'
+            });
+</script>
+<script type="text/javascript">
+    var app=angular.module('app', []);
+    app.controller('test', ['$scope','$http', function($scope,$http){
+        $scope.username = '';
+        $scope.pwd = '';
+        $scope.phone = '13651478554';
+        $scope.myPost = function () {
+            var activity = angular.toJson({"username":$scope.username,"pwd":$scope.pwd});
+            $http.post('ViewWorld/user_userAction_register.action',activity)
+                    .success(function(data){
+                        var jsonObj = angular.fromJson(data);
+                        alert("修改成功"+jsonObj.state)})
+                    .error(function(data){
+                        alert("修改失败:" + JSON.stringify({data:data}));
+                    });
+        };
+        $scope.myPhonePost = function () {
+            var Account_Sid = '8ec924cd1d2ae715045a56a5950a75c2';
+            var Auth_Token = '00228a9fe723c5a7216536b4c31f9987';
+            var SoftVersion = '2014-06-30';
+            var Accounts = 'Accounts';
+            var serviceF = 'Messages';
+            var operation = 'templateSMS';
+            var msgVerify = getRandom();
+            var Time = getDate(new Date());
+            var sig = hex_md5(Account_Sid+Auth_Token+Time).toUpperCase().toString();
+            var Authorization = BASE64.encoder(Account_Sid+":"+Time);
+            var url = 'https://api.ucpaas.com/'+SoftVersion+'/'+Accounts+'/'+Account_Sid+'/'+serviceF+'/'+operation+'?sig='+sig;
+            var activity = angular.toJson(
+                    {
+                        "templateSMS" : {
+                            "appId": "6d00e87adbc647fb966d9a4fe5361ded",
+                            "param": "ViewWorld,"+msgVerify+",5",
+                            "templateId": "35626",
+                            "to": $scope.phone
+                        }
+                    });
+            $http({
+                method: "post",
+                data: activity,
+                url: url,
+                headers : {
+                    'Accept' : 'application/json',
+                    'Content-Type' : 'application/json;charset=utf-8',
+                    'Authorization' : Authorization
+                }
+            }).success(function(data){
+                var jsonObj = angular.fromJson(data);
+                alert("修改成功"+jsonObj.state)})
+            .error(function(data){
+                alert("修改失败:" + JSON.stringify({data:data}));
+            });
+        };
+        function getDate(date){
+            var str="";
+            str+=date.getFullYear();    //年
+            str+=date.getMonth()+1;     //月 月比实际月份要少1
+            str+=date.getDate();        //日
+            str+=date.getHours();       //HH
+            str+=date.getMinutes();     //MM
+            str+=date.getSeconds();       //SS
+            return str;
+        }
+        function getRandom() {
+            var msgVerify = 1;
+            while ( msgVerify < 1000  ) msgVerify = Math.floor(Math.random()*10000);
+            return msgVerify;
+        }
+    }]);
+</script>
+</body>
+</html>

@@ -1,0 +1,1284 @@
+.personal .user-header{
+    margin: 0 0 55px;
+    padding: 40px 0 0;
+}
+.personal .user-header .user-header-left{
+    float: left;
+}
+.personal .user-header .user-header-right{
+    float: right;
+    padding: 35px 0;
+}
+.personal .user-header::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+.personal .user-header .user-header-left .header-left-avatar{
+    width: 146px;
+    height: 146px;
+    float: left;
+    border: 3px solid #fff;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.personal .user-header .user-header-left img{
+    width: 100%;
+    height: 100%;
+}
+.personal .user-header .user-header-left .user-header-text{
+    display: block;
+    margin: 0 0 0 166px;
+    vertical-align: top;
+}
+.personal .user-header .user-header-left .user-header-text h3{
+    display: inline-block;
+}
+.personal .user-header .user-header-left .user-header-text span{
+    display: inline-block;
+    vertical-align: super;
+    color: #999;
+}
+.personal .user-header .user-header-left .user-header-text p{
+    color: #999;
+    margin: 10px 0 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-break: break-all;
+    overflow: hidden;
+}
+.personal .user-header .user-header-left .user-header-text .left-text-btn button,
+.editMyselfData .edit-content .from-out-div button{
+    margin-right: 5px;
+    padding: 4px 10px;
+    min-width: 80px;
+    line-height: 20px;
+    border-color: #14b9c8;
+    background: #14b9c8;
+    color: #fff;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.personal .user-header .user-header-left .user-header-text .left-text-btn button:hover,
+.editMyselfData .edit-content .from-out-div button:hover{
+    border-color: #12a7b4;
+    background: #12a7b4;
+}
+.personal .user-header .user-header-right .header-right-stats{
+    margin: 0 0 15px;
+}
+.personal .user-header .user-header-right .header-right-stats li{
+    float: left;
+    padding: 5px 0;
+    width: 33.3333333333%;
+}
+.personal .user-header .user-header-right .header-right-stats li a{
+    cursor: pointer;
+    text-decoration: none;
+}
+.personal .user-header .user-header-right .header-right-stats li span{
+    display: block;
+    text-align: center;
+    color: #14B9C8;
+}
+.personal .user-header .user-header-right .header-right-stats li span.right-stats-number{
+    line-height: 30px;
+    font-size: 24px;
+}
+.personal .user-header .user-header-right .header-right-stats li:nth-child(2) {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.user-person-body .new-video{
+    margin-top: 30px;
+}
+.user-person-body .new-img .title,
+.user-person-body .new-video .title,
+.person-body-right-1 .title{
+    margin: 0 0 20px;
+    border-bottom: 1px solid #ddd;
+}
+.user-person-body .new-img .title p,
+.user-person-body .new-video .title p,
+.person-body-right-1 .title p{
+    font-size: 1.3em;
+    font-weight: bold;
+    border-left: 4px solid #14B9C8;
+    padding: 0 0 0 8px;
+    cursor: pointer;
+    display: inline-block;
+}
+.user-person-body .new-img .title p span,
+.user-person-body .new-video .title p span,
+.person-body-right-1 .title p span{
+    font-weight: normal;
+    color: #14B9C8;
+    vertical-align: text-top;
+}
+.user-person-body .title .submission{
+    display: inline-block;
+    float: right;
+    text-decoration: none;
+    color: rgb(251, 134, 134);
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 7px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.user-person-body .block-a{
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;/* padding百分比相对父元素宽度计算 */
+    height: 0; /*避免被内容撑开多余的高度*/
+    position: relative;
+    cursor: pointer;
+}
+.user-person-body .block-a+p{
+    cursor: pointer;
+}
+.user-person-body img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
+}
+.user-person-body .new-img .row p,
+.user-person-body .new-video .row p{
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 1px;
+}
+.user-person-body .new-img .row span,
+.user-person-body .new-video .row span{
+    font-size: 0.5em;
+    color: #999;
+    padding: 0 3px;
+}
+.person-body-right-1 ul{
+    margin: 0;
+    padding:0;
+    list-style-type: none;
+}
+
+.person-body-right-1 ul li{
+    margin: 15px 0;
+}
+.person-body-right-1 ul .user-img{
+    width: 20%;
+    display: inline-block;
+}
+.person-body-right-1 ul .user-img a{
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+    height: 0;
+    position: relative;
+}
+.person-body-right-1 ul .user-img a img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.person-body-right-1 ul .user-person-info{
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+    margin-top: 8px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+.person-body-right-1 ul .user-person-info p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.person-body-right-1 ul .user-person-info span{
+    color: #999;
+}
+.editMyselfData .edit-content{
+    background-color: #ffffff;
+    box-shadow: 1px 3px 3px 0 rgba(0,0,0,.15);
+}
+.editMyselfData .img-header{
+    position: relative;
+    display: block;
+    margin: 50px auto 0;
+    height: 140px;
+    width: 140px;
+    cursor: pointer;
+}
+.editMyselfData .img-header img{
+    width: 100%;
+    height: 100%;
+}
+.editMyselfData .img-header i{
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 28px;
+    margin-left: -15px;
+    margin-top: -14px;
+    color: #14b9c8;
+    opacity: 0;
+    transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+}
+.editMyselfData .img-header:hover i{
+    opacity: 1;
+}
+.editMyselfData input#headImage{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.editMyselfData .edit-top{
+    background: #fafafa;
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 0;
+}
+.editMyselfData .edit-content .from-out-div select{
+    min-width: 50px;
+    padding-left: 5px;
+}
+.editMyselfData .edit-content .from-out-div .setPw{
+    display: block;
+    padding-top: 7px;
+    margin-bottom: 0;
+    color: #14b9c8;
+    text-decoration: none;
+    cursor: pointer;
+}
+.editMyselfData .edit-content .from-out-div button{
+    margin-top: 10px;
+}
+.editMyselfData .edit-content .from-out-div {
+    margin-bottom: 60px;
+}
+.editMyselfData .editMyselfData-select{
+    padding-top: 7px;
+}
+.editMyselfData .modifyImage{
+    display: block;
+    text-align: center;
+    width: 242px;
+    height: 35px;
+    line-height: 45px;
+    margin: -15px auto 20px;
+    color: #99a2aa;
+    text-decoration: none;
+    cursor: pointer;
+    background: url(../image/promotion.png) no-repeat 100% 0px;
+}
+.modifyImageDialog #canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+}
+.album{
+    background-color: #fff;
+    padding: 0 15px 0!important;
+    box-shadow: 1px 3px 3px 0 rgba(0,0,0,.15);
+}
+.album .col-md-6{
+    padding: 0;
+}
+.album .albumImg{
+    position: relative;
+    padding-bottom: 95%;
+    width: 100%;
+    height: 0;
+}
+.album .albumImg img{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.album .albumInfoOut{
+    position: relative;
+    width: 100%;
+    padding-bottom: 95%;
+    height: 0;
+}
+.album .albumInfoOut .albumInfo{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 60px 65px;
+    color: #3C3C3C;
+}
+.album .albumInfo h2{
+    text-align: center;
+    margin-bottom: 60px;
+}
+.album .albumInfo p{
+    text-indent:2em;
+    font-size: 1.2em;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+    word-break: break-all;
+    overflow: hidden;
+}
+.album .albumInfo p:last-child{
+    text-align: right;
+    margin-top: 25px;
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+}
+.album .albumInfo p:last-child a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.album .albumInfo p:last-child i{
+    color: #14b9c8;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+.album .albumInfo p:last-child span:hover{
+    color: #14b9c8;
+}
+.insideAlbum{
+    background-color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.insideAlbum .inside-top .author{
+    display: inline-block;
+    float: left;
+    color: #14b9c8;
+    font-size: 16px;
+}
+.insideAlbum .inside-top .time{
+    display: inline-block;
+    float: right;
+}
+.insideAlbum .inside-top::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.insideAlbum .inside-meddle{
+    text-align: center;
+}
+.insideAlbum .inside-meddle .page-header{
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.insideAlbum .inside-meddle .page-header h1{
+    font-size: 4em;
+}
+.insideAlbum .inside-meddle>p{
+    font-size: 1.6em;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+.insideAlbum .inside-meddle p a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #f391a9;
+}
+.insideAlbum .inside-meddle p .badge{
+    background-color: #f391a9;
+}
+.insideAlbum .inside-meddle .info{
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+.insideAlbum .inside-meddle .info .info-content{
+    position: relative;
+    padding: 15px 16px 15px 16px;
+}
+.insideAlbum .inside-meddle .info .info-content p{
+    text-indent: 2em;
+    font-size: 1.5em;
+}
+.insideAlbum .inside-meddle .info .info-content .Quotes1{
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: url(../../style/image/Quotes1.png) no-repeat;
+}
+.insideAlbum .inside-meddle .info .info-content .Quotes2{
+    position: absolute;
+    bottom: 0;
+    right: 1px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: url(../../style/image/Quotes2.png) no-repeat;
+}
+.inside-buttom .col-md-3{
+    padding: 0;
+}
+.inside-buttom .inside-img-out{
+    width: 100%;
+    height: 0;
+    padding-bottom: 90%;
+    position: relative;
+}
+.inside-buttom .inside-img-out .inside-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    overflow: hidden;
+}
+.inside-buttom .inside-img-out .inside-img img{
+    width: 100%;
+    height: 100%;
+    -webkit-transform: scale(1.3,1.3);
+    -o-transform: scale(1.3,1.3);
+    -moz-transform: scale(1.3,1.3);
+    transform: scale(1.3,1.3);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    opacity: 0.9;
+}
+.inside-buttom .inside-img-out .inside-img img:hover{
+    transform: scale(1,1);
+    opacity: 1;
+}
+.video.videoAlbum{
+    background-color: #fff;
+    padding: 30px 15px 0!important;
+    box-shadow: 1px 3px 3px 0 rgba(0,0,0,.15);
+}
+.video.videoAlbum .video-body{
+    min-height: 250px;
+}
+.video .video-top{
+    padding-bottom: 15px;
+}
+.video .video-top .col-md-12{
+    position: relative;
+}
+.video .video-top strong{
+    font-size: 1.5em;
+    color: #14b9c8;
+    padding-left: 5px;
+    border-left: 5px solid #14b9c8;
+}
+.video .video-top .video-top-right{
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+    margin-right: 15px;
+}
+.video .video-top .video-top-right span{
+    display: inline-block;
+    padding: 6px 8px;
+    margin-right: 2px;
+    cursor: pointer;
+}
+.video .video-top .video-top-right span:hover{
+    color: #14b9c8;
+    border-bottom: 1px solid #14b9c8;
+}
+.video .video-top .video-top-right span.active{
+    color: #14b9c8;
+    border-bottom: 1px solid #14b9c8;
+    position: relative;
+}
+.video .video-top .video-top-right span.active i{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -4px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 4px solid white;
+    border-right: 4px solid #ffffff;
+    border-bottom: 4px solid #14b9c8;
+    border-left: 4px solid #fff;
+}
+.video .video-body .body-top{
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    margin-top: 15px;
+}
+.video .video-body .body-top .imgBody{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 70%;
+}
+.video .video-body .body-top .imgBody img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.video .video-body .body-top p{
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-break: break-all;
+    overflow: hidden;
+    font-size: 0.9em;
+    margin-top: 5px;
+    text-indent:1em;
+    color: #3C3C3C;
+}
+.video .video-body .body-bottom span{
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    color: #999;
+}
+.video .video-body .body-bottom span:first-child{
+    width: 35%;
+}
+.video .video-body .body-bottom span:last-child{
+    width: 60%;
+}
+.video .video-body .body-bottom span i{
+    color: #14b9c8;
+}
+.uploadVideo,
+.uploadAlbum{
+    position: relative;
+    padding: 30px 0;
+    background: #fff url(../image/bg1.png) no-repeat center 0px;
+    background-size: 177% 100%;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    min-height: 1042px;
+}
+.uploadVideo .body,
+.uploadAlbum .body{
+    background-color: #fff;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+    width: 950px;
+    margin: auto;
+    padding-bottom: 10px;
+}
+#videoImage,
+#videoData{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.uploadVideo .body .left .video-Img .cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    text-align: center;
+}
+.uploadVideo .body .left .video-Img .cover span{
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.uploadVideo .body .left .video-Img img{
+    width: 100%;
+    height: 100%;
+}
+.uploadVideo .body .left .video-Img{
+    position: relative;
+    width: 160px;
+    height: 100px;
+    margin: 30px auto 25px;;
+    border: 2px #bdc1c5 dashed;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.uploadVideo .body .left .video-Img:hover{
+    border: 2px dashed #00a1d6;
+    color: #00a1d6;
+}
+.uploadVideo .body .left .video-Img .center{
+    position: absolute;
+    width: 100%;
+    height: 52px;
+    text-align: center;
+    top: 50%;
+    margin-top: -26px;
+}
+.uploadVideo .body .left .video-Img .center i{
+    display: block;
+    background: url("../image/uploadImg-1.png") no-repeat 0 0;
+    background-size: cover;
+    overflow: hidden;
+    width: 38px;
+    height: 32px;
+    margin: auto;
+}
+.uploadVideo .body .left .video-Img .video-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    cursor: pointer;
+}
+.uploadVideo .body .left .video-imgTip,
+.uploadAlbum .body .left .album-imgTip{
+    position: relative;
+    width: 160px;
+    margin: auto;
+    background: #f4f5f7;
+    border: 1px solid #e5e9ef;
+    border-radius: 4px;
+    padding: 6px;
+}
+.uploadAlbum .body .left .album-imgTip{
+    margin-top: 30px;
+}
+.uploadVideo .body .left .video-imgTip ul,
+.uploadAlbum .body .left .album-imgTip ul{
+    padding: 0 0 0 15px;
+    color: #99a2aa;
+    margin: 0;
+}
+.uploadVideo .body .left .video-imgTip ul li span,
+.uploadAlbum .body .left .album-imgTip ul li span{
+    font-size: 12px;
+    line-height: 20px;
+}
+.uploadVideo .body .left .video-imgTip .imgTip-horn{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -20px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid white;
+    border-right: 10px solid #ffffff;
+    border-bottom: 10px solid #f4f5f7;
+    border-left: 10px solid #fff;
+}
+.uploadAlbum .body .left .album-imgTip .imgTip-horn{
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: 0;
+    margin-top: -10px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid white;
+    border-right: 10px solid white;
+    border-bottom: 10px solid white;
+    border-left: 10px solid #f4f5f7;
+}
+.uploadVideo .body .right{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 0;
+}
+.uploadVideo .body .right .addingVideo-12{
+    margin-bottom: 20px;
+}
+.uploadVideo .body .right .addingVideoImg{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+}
+.uploadVideo .body .right .addingVideoImg span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    z-index: 10;
+    color: #00a1d6;
+    font-size: 18px;
+    margin-left: -22px;
+    margin-top: -22px;
+}
+.uploadVideo .body .right .meta-wrp{
+    position: relative;
+    width: 100%;
+    height: 44px;
+    padding: 0 0 0 60px;
+    color: #99a2aa;
+}
+.uploadVideo .body .right .meta-wrp .status-wrp{
+    position: relative;
+    height: 32px;
+    padding: 4px 0 10px;
+    font-size: 12px;
+}
+.uploadVideo .body .right .meta-wrp .status-wrp span{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+.uploadVideo .body .right .meta-wrp .status-wrp .name-wrp{
+    color: #00a1d6;
+    max-width: 75%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.uploadVideo .body .right .meta-wrp .status-wrp .upload-status.highlight{
+    color: #00a1d6;
+}
+.uploadVideo .body .right .meta-wrp .status-wrp .right-act-wrp{
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    float: right;
+    color: #f36565;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.uploadVideo .body .right .meta-wrp:hover .status-wrp .right-act-wrp{
+    opacity: 1;
+    visibility: visible;
+}
+.uploadVideo .body .right .meta-wrp .progress-wrp{
+    position: relative;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: #ccd0d7;
+}
+.uploadVideo .body .right .meta-wrp .progress-wrp .progress{
+    width: 45%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg,#00a1d6,#45cafb);
+    height: 4px;
+    margin: 0;
+}
+.uploadVideo .body .right .addVideo:hover{
+    border: 2px dashed #00a1d6;
+    color: #00a1d6;
+}
+.uploadAlbum .body .right .addAlbumBatch:hover{
+    border: 2px dashed #00a1d6;
+    color: #00a1d6;
+}
+.uploadVideo .body .right .addVideo,
+.uploadAlbum .body .right .addAlbumBatch,
+.uploadAlbum .body .right .addAlbumSingle{
+    border: 2px #bdc1c5 dashed;
+    border-radius: 5px;
+    text-align: center;
+    padding: 3px 0;
+    color: #bdc1c5;
+    cursor: pointer;
+}
+.uploadAlbum .body .right .addAlbum{
+    position: relative;
+    padding-bottom: 70%;
+    height: 0;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px 0 0;
+}
+.uploadAlbum .body .right .addAlbum img{
+    width: 100%;
+    height: 100%;
+}
+.uploadAlbum .body .right .addAlbumBatch .fa-plus,
+.uploadAlbum .body .right .addAlbumSingle .fa-plus{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -14px 0 0 -11px;
+}
+.uploadAlbum .body .right #albumImage{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.uploadAlbum .body .right .addAlbumBatch,
+.uploadAlbum .body .right .addAlbumSingle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.uploadVideo .body .right>.row,
+.uploadAlbum .body .right>.row{
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+.uploadVideo .body .right .video-float-ul,
+.uploadAlbum .body .right .video-float-ul{
+    list-style-type: none;
+    padding: 0;
+}
+.uploadVideo .body .right .video-float-ul li,
+.uploadAlbum .body .right .video-float-ul li{
+    float: left;
+    display: block;
+    min-width: 77px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 1px solid #ccd0d7;
+    text-align: center;
+    font-size: 14px;
+    color: #222;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: #f4f5f7;
+    cursor: pointer;
+}
+.uploadVideo .body .right .video-float-ul li a,
+.uploadAlbum .body .right .video-float-ul li a{
+    text-decoration: none;
+    color: #222;
+}
+.uploadAlbum .body .right .video-float-ul li.active,
+.uploadVideo .body .right .video-float-ul li.active{
+    background: #00a1d6;
+    border: 1px solid #00a1d6;
+}
+.uploadAlbum .body .right .video-float-ul li.active a,
+.uploadVideo .body .right .video-float-ul li.active a{
+    color: #fff;
+}
+.uploadVideo .body .right .video-float-ul li:hover,
+.uploadAlbum .body .right .video-float-ul li:hover{
+    border: 1px solid #00a1d6;
+    margin-bottom: 5px;
+}
+.uploadVideo .body .right .video-float-ul li:hover a,
+.uploadAlbum .body .right .video-float-ul li:hover a{
+    color: #00a1d6;
+}
+.uploadVideo .body .right .video-float-ul li.active:hover,
+.uploadAlbum .body .right .video-float-ul li.active:hover{
+    background: #00a1d6;
+}
+.uploadVideo .body .right .video-float-ul li.active:hover a,
+.uploadAlbum .body .right .video-float-ul li.active:hover a{
+    color: #fff!important;
+}
+.uploadVideo .body .left,
+.uploadAlbum .body .left{
+    padding-right: 0;
+}
+.uploadVideo .body .right .video-title .form-group,
+.uploadAlbum .body .right .album-title .form-group{
+    position: relative;
+}
+.uploadVideo .body .right .video-title .form-group span,
+.uploadAlbum .body .right .album-title .form-group span{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    height: 20px;
+    margin-top: -10px;
+    color: #99a2aa;
+    z-index: 9999;
+    background: #fff;
+}
+.uploadAlbum .body .right .album-title .form-group span.textareaWarning {
+    bottom: 1%;
+    top: initial;
+}
+.uploadVideo .body .right .video-title .form-group textarea,
+.uploadAlbum .body .right .album-title .form-group textarea{
+    display: block;
+    width: 100%;
+    height: 150px;
+    border-radius: 4px;
+    border: 1px solid #ccd0d7;
+    font-size: 12px;
+    color: #222;
+    padding: 5px 12px;
+    resize: none;
+}
+.uploadAlbum .body .right .dropdown{
+    margin: 15px 15px 0 0;
+}
+.uploadAlbum .body .right .dropdown .btn{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.uploadAlbum .body .right .btn-default:hover,
+.uploadAlbum .body .right .btn-default:focus,
+.uploadAlbum .body .right .btn-default:active,
+.uploadAlbum .body .right .btn-default:link,
+.uploadAlbum .body .right .open>.dropdown-toggle.btn-default{
+    background-color: #fff;
+}
+.uploadAlbum .body .right .dropdown ul{
+    border-color: rgba(18,167,180,0.3);
+}
+.uploadAlbum .body .right .dropdown a{
+    outline: none;
+    box-shadow: none;
+}
+.uploadAlbum  .dropdown-menu>li>a:hover,
+.uploadAlbum .dropdown-menu>li>a:focus{
+    background-color: #fff;
+}
+.uploadVideo .body .right .video-title .form-group input:hover,
+.uploadVideo .body .right .video-title .form-group textarea:hover,
+.uploadAlbum .body .right .video-title .form-group input:hover,
+.uploadAlbum .body .right .video-title .form-group textarea:hover{
+    border-color: #00a1d6;
+}
+.uploadAlbum .body .submit-wrp .progress-content .progress{
+    margin-bottom: 10px;
+}
+.uploadVideo .body .submit-wrp,
+.uploadAlbum .body .submit-wrp{
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+.uploadVideo .body .submit-wrp button,
+.uploadAlbum .body .submit-wrp button{
+    display: inline-block;
+    outline: none;
+    -webkit-appearance: button;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    width: 170px;
+    height: 42px;
+    line-height: 42px;
+    background-color: #00a1d6;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.uploadVideo .body .submit-wrp button:hover,
+.uploadAlbum .body .submit-wrp button:hover{
+    background-color: #00b5e5
+}
+.uploadVideo .video-sug p,
+.uploadAlbum .album-sug p{
+    text-align: center;
+    margin-top: 15px;
+}
+.uploadVideo .video-sug p a,
+.uploadAlbum .album-sug p a{
+    text-decoration: none;
+    color: #00a1d6;
+    font-size: 12px;
+}
+.uploadVideo .video-box,
+.uploadAlbum .album-box {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 1px 2px 3px rgba(0,0,0,.10);
+    width: 950px;
+    margin: auto;
+}
+.uploadVideo .video-box .box-wrp:first-child,
+.uploadAlbum .album-box .box-wrp:first-child{
+    padding-left: 20px;
+}
+.uploadVideo .video-box .box-wrp .title,
+.uploadAlbum .album-box .box-wrp .title{
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #000;
+}
+.uploadVideo .video-box .box-wrp .help-menu,
+.uploadAlbum .album-box .box-wrp .help-menu{
+    color: #6d757a;
+    list-style: none;
+    padding: 0;
+}
+.uploadVideo .video-box .box-wrp .help-menu>li,
+.uploadAlbum .album-box .box-wrp .help-menu>li{
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 10px;
+}
+.uploadVideo .video-box .box-wrp .help-menu .dot,
+.uploadAlbum .album-box .box-wrp .help-menu .dot{
+    position: absolute;
+    top: 6px;
+    left: 0;
+    margin-top: -2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: #00a1d6;
+    margin-right: 8px;
+}
+.uploadVideo .video-box .box-wrp .help-menu span a,
+.uploadAlbum .album-box .box-wrp .help-menu span a{
+    color: #00a1d6;
+    text-decoration: none;
+}
+.uploadVideo .video-box .box-wrp .qa-list,
+.uploadAlbum .album-box .box-wrp .qa-list{
+    list-style: none;
+    padding: 0;
+}
+.uploadVideo .video-box .left,
+.uploadAlbum .album-box .left{
+    float: left;
+}
+.uploadVideo .video-box .box-wrp .qa-list .qa-link,
+.uploadAlbum .album-box .box-wrp .qa-list .qa-link{
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    color: #99a2aa;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+.uploadVideo .video-box .box-wrp .qa-list .qa-link:hover,
+.uploadAlbum .album-box .box-wrp .qa-list .qa-link:hover{
+    color: #00a1d6;
+}
+.uploadVideo .video-box .box-wrp .qa-list .qa-faq,
+.uploadAlbum .album-box .box-wrp .qa-list .qa-faq{
+    padding-left: 12px;
+}
+.uploadVideo .video-box .box-wrp:last-child{
+    padding-left: 30px;
+}
+.uploadVideo .video-box .box-wrp .tool-row{
+    margin-bottom: 14px;
+    height: 36px;
+    line-height: 36px;
+}
+.uploadVideo .video-box .box-wrp .tool-row h3{
+    font-weight: 400;
+    font-size: 12px;
+    color: #6d757a;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 7px;
+    width: 65px;
+}
+.uploadVideo .video-box .box-wrp .tool-row .tool-btn{
+    position: relative;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 18px;
+    border: 1px solid #ccd0d7;
+    font-size: 12px;
+    color: #222;
+    cursor: pointer;
+    padding: 0 20px;
+    text-decoration: none;
+    position: relative;
+}
+.uploadVideo .video-box .box-wrp .tool-row .tool-btn:hover{
+    border: 1px solid #00a1d6;
+    background-color: #00a1d6;
+    color: #fff;
+}
+.uploadVideo .video-box .box-wrp .tool-row .icon-new{
+    position: absolute;
+    right: -5px;
+    top: -6px;
+    display: block;
+    border-radius: 10px;
+    background-color: #F25D8E;
+    color: #fff;
+    width: 30px;
+    height: 13px;
+    line-height: 11.5px;
+    font-style: normal;
+    text-align: center;
+}
+.white-cover{
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    background-color: white;
+    z-index: 9999;
+    height: 60px;
+    width: 100%;
+}
+.warning{
+    color: #e40c0c;
+}
+.galleryContent{
+    width: 0;
+    height: 0;
+}
+/*修改图片模态框内容样式*/
+.modifyImageDialog-body{position: relative}
+.modifyImageDialog-body .box{
+    position: relative;
+    width: 460px;
+    height: 360px;
+}
+.modifyImageDialog-body img{
+    width: 100%;
+    height: 100%;
+}
+.modifyImageDialog-body .img1{
+    opacity: 0.7;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.modifyImageDialog-body .img2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip: rect(0,200px,200px,0);
+}
+.modifyImageDialog-body .main{
+    position: absolute;
+    border: 1px solid #fff;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+}
+.modifyImageDialog-body .minDiv{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+}
+.modifyImageDialog-body .left-up{
+    top: -4px;
+    left: -4px;
+    cursor: nw-resize;
+}
+.modifyImageDialog-body .up{
+    left: 50%;
+    margin-left: -4px;
+    top: -4px;
+    cursor: n-resize;
+}
+.modifyImageDialog-body .right-up{
+    right: -4px;
+    top: -4px;
+    cursor: ne-resize;
+}
+.modifyImageDialog-body .right{
+    right: 0;
+    top: 50%;
+    margin-right: -4px;
+    margin-top: -4px;
+    cursor: e-resize;
+}
+.modifyImageDialog-body .right-down{
+    bottom: 0;
+    right: 0;
+    margin-bottom: -4px;
+    margin-right: -4px;
+    cursor: se-resize;
+}
+.modifyImageDialog-body .down{
+    bottom: 0;
+    left: 50%;
+    margin-bottom: -4px;
+    margin-left: -4px;
+    cursor: s-resize;
+}
+.modifyImageDialog-body .left-down{
+    bottom: 0;
+    left: 0;
+    margin-bottom: -4px;
+    margin-left: -4px;
+    cursor: sw-resize;
+}
+.modifyImageDialog-body .left{
+    top: 50%;
+    left: 0;
+    margin-top: -4px;
+    margin-left: -4px;
+    cursor: w-resize;
+}
+.modifyImageDialog-body .preview{
+    position: absolute;
+    width: 460px;
+    height: 360px;
+    top: 15px;
+    left: 490px;
+}
+.modifyImageDialog-body .preview .img3{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip: rect(0,200px,200px,0);
+}
+.modifyImageDialog .modal-lg{
+    width: 968px!important;
+}
+
+@media only screen and (max-width: 991px){
+    .white-cover{
+        bottom: -30px;
+        height: 30px;
+    }
+}

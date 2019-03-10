@@ -1,0 +1,50 @@
+<div class="userOp">
+    <div class="container">
+        <div class="row">
+            <div class="page-header animated">
+                <h1>View World </h1>
+                <span>即可加入View World家族</span>
+                <div class="waitUpdate" ng-if="loading">
+                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                    <span class="fa-Loading">Loading...</span>
+                </div>
+            </div>
+            <div class="form-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group groupBorder">
+                        <label for="User" class="col-sm-2 control-label"><i class="fa fa-user fa-2x faUser"></i></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control inputUser" id="User" placeholder="账号" ng-model="userInfo.account" ng-focus="focusEvent(1)">
+                            <a tabindex="0" class="popoverStyle popoverReg-1" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-original-title="" data-content="{{popoverInfo.content}}"></a>
+                        </div>
+                    </div>
+                    <div class="form-group groupBorder">
+                        <label for="Password" class="col-sm-2 control-label"><i class="fa fa-unlock-alt fa-2x faPw"></i></label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control inputPw" id="Password" placeholder="密码" ng-model="userInfo.password" ng-focus="focusEvent(2)">
+                            <a tabindex="0" class="popoverStyle popoverReg-2" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-original-title="" data-content="{{popoverInfo.content}}"></a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-1 col-sm-11">
+                            <div class="checkbox remember">
+                                <label>
+                                    <input type="checkbox" ng-model="awesome" ng-true-value="Y" ng-false-value="N"> 记住我
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn submitBtn" ng-click="login()">登录</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="login-link">
+                <a ui-sref="main.register">新注册用户</a>
+                <a ui-sref="main.findPw">忘记密码</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,247 @@
+.Custom-body{
+    margin-top: 30px;
+}
+.Custom-body .accordion h4,
+.Custom-body .accordion ul li a{
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    padding: 14px 22px;
+    outline: 0;
+}
+.Custom-body .accordion h4{
+    font-size: 15px;
+    background: #ED5565;
+    border-bottom:1px solid #DA4453;
+    cursor: pointer;
+    margin: 0;
+}
+.Custom-body .accordion h4.ui-state-hover{
+    background-color: #DA4453;
+}
+.Custom-body .accordion h4.ui-state-active{
+    background-color: #DA4453;
+}
+.Custom-body .accordion h4 i:last-child{
+    float: right;
+    /*设置动画效果为先慢开始，然后快，在以慢结束*/
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.plus-rotate{
+    /*触碰旋转360度*/
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.Custom-body .accordion ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.Custom-body .accordion ul li a{
+    padding-left: 30px;
+    float: left;
+    font-size: 11px;
+    background: #383838;
+    border-top: none;
+    position: relative;
+    border-left: solid 6px transparent;
+    transition: border .2s linear;
+    border-bottom: none;
+    cursor: pointer;
+}
+.Custom-body .accordion ul li:hover a{
+    border-left-color: #ED5565;
+}
+.Custom-body .Custom-right{
+    background: #fff;
+    color: #666;
+    font-weight: 500;
+    box-shadow: 1px 3px 3px 0 rgba(0,0,0,.15);
+}
+.Custom-body .breadcrumb{
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1em;
+}
+.Custom-body .breadcrumb a{
+    text-decoration: none;
+}
+.Custom-body .breadcrumb a:hover{
+    color: #428bca;
+}
+.Custom-body .Custom-right .Custom-right-content{
+    height: 650px;
+    overflow-y: auto;
+    border-bottom: 1px solid #E5E5E5;
+}
+.NoFindService p{
+    font-size: 25px;
+    color: #888;
+    text-align: center;
+    margin: 80px 0;
+}
+.NoFindService img{
+    float: right;
+}
+.Custom-body .Custom-right .Suggestion{
+    margin-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    color: #666;
+}
+.Custom-body .Custom-right .Suggestion .SuggestionOption p{
+    font-size: 1.2em;
+}
+.Custom-body .Custom-right .Suggestion .SuggestionOption button{
+    margin-right: 10px;
+}
+.Custom-body .Custom-right .Suggestion .UserBack{
+    position: relative;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+.Custom-body .Custom-right .Suggestion .UserBack ul{
+    overflow: hidden;
+    margin-bottom: 15px;
+    max-width: 700px;
+}
+.Custom-body .Custom-right .Suggestion .UserBack ul li{
+    float: left;
+    width: 50%;
+    margin-bottom: 6px;
+}
+.Custom-body .Custom-right .Suggestion .UserBack .UserBack-input-textarea{
+    margin-bottom: 20px;
+}
+.Custom-body .Custom-right .Suggestion .UserBack button{
+    margin-right: 10px;
+}
+.Custom-body .Custom-right .Suggestion .UserBack .ErrorBack{
+    display: none;
+    color: red;
+    font-size: 1em;
+    margin-left: 15px;
+}
+/*SuggestionBox*/
+.Custom-body .sugBody{
+    background-color: #fff;
+    color: #3C3C3C;
+    text-align: center;
+    margin-right: -5px;
+    padding: 0 5px 10px 5px;
+}
+.Custom-body .sugBody .sugIcon i{
+    border: 1px solid #E5E5E5;
+    background: rgb(241,158,194);
+    border-radius: 50px;
+    padding: 20px;
+    color: #FFF;
+    margin-top: 20px;
+}
+.Custom-body .sugBody .sugInfo .sugInfoSpan {
+    font-size: 2em;
+    color: rgb(241,158,194);
+}
+.Custom-body .sugBody .sugInfo h4,
+.Custom-body .sugBody .sugInfo p{
+    text-align: left;
+    text-indent:1em;
+}
+.Custom-body .sugBody .sugInfo h4 strong{
+    color: rgb(241,158,194);
+}
+.Custom-body .sugBody .sugInfo p a{
+    text-decoration: none;
+}
+.Custom-body .Custom-right .Custom-right-content .sug-ul{
+    padding: 15px;
+}
+.Custom-body .Custom-right .Custom-right-content .sug-ul li:first-child{
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+.Custom-body .Custom-right .Custom-right-content .sug-ul .field-form{
+    font-size: 1.5em;
+    color: #666;
+}
+.Custom-body .Custom-right .Custom-right-content .sug-ul .feedback_radio_lab{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 4px;
+    vertical-align: bottom;
+}
+.Custom-body .Custom-right .Custom-right-content .sug-form .form-Sign{
+    padding: 0 35px;
+    height: 36px;
+    line-height: 36px;
+}
+.Custom-body .Custom-right .Custom-right-content .sug-form .form-Sign:hover{
+}
+.Custom-body .Custom-right .Custom-right-content .sug-form .ErrorBack{
+    color: red;
+    font-size: 1em;
+    margin-left: 15px;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-bottom: 7px;
+}
+/*myService*/
+.Service-body img {
+    border-radius: 3px;
+    box-shadow: 1px 3px 3px 0 rgba(0,0,0,.15);
+}
+.Service-body .media-list li.media:first-child{
+    padding-top: 0;
+}
+.Service-body .media-list li.media{
+    padding: 8px 0 20px;
+    border-bottom: 1px solid #ddd;
+}
+.Service-body .media-list li.media:last-child{
+    border-bottom: none;
+}
+.Service-body .media-body{
+    width: 100%;
+}
+.Service-body .media-body .media{
+    margin-top: 0;
+}
+.Service-body .media-heading{
+    color: #14b9c8;
+}
+.Service-body .media-text{
+    text-indent: 1em;
+}
+.Service-body .userText{
+    height: 58px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    word-break: break-all;
+    overflow: hidden;
+}
+.Service-body .media-text + p{
+    margin-bottom: 0;
+}
+.Service-body .time{
+    float: right;
+}
+.Service-body p::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+

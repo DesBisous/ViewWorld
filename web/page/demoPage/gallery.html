@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row gallery-head">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            <div class="head-text">画廊</div>
+            <span class="head-time" ng-bind="fixedTime"></span>
+            <div class="head-line"></div>
+        </div>
+    </div>
+    <div class="row gallery-tab">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="gallery-tab-change active">
+                    <a ng-click="setTypeIndex(1)">
+                        <i class="gallery-tip1"></i>
+                        <span>节日</span>
+                    </a>
+                </li>
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="setTypeIndex(2)">
+                        <i class="gallery-tip1"></i>
+                        <span>美食</span>
+                    </a>
+                </li>
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="setTypeIndex(3)">
+                        <i class="gallery-tip1"></i>
+                        <span>时尚</span>
+                    </a>
+                </li>
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="setTypeIndex(4)">
+                        <i class="gallery-tip1"></i>
+                        <span>户外</span>
+                    </a>
+                </li>
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="setTypeIndex(5)">
+                        <i class="gallery-tip1"></i>
+                        <span>生活</span>
+                    </a>
+                </li>
+                <li role="presentation" class="gallery-tab-change">
+                    <a ng-click="goGalleryTypeOther()">
+                        <i class="gallery-tip1"></i>
+                        <span>其他</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row gallery-body">
+        <div ui-view="gallerycontent"></div>
+    </div>
+</div>
